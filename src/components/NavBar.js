@@ -1,0 +1,41 @@
+import { Navbar, NavDropdown, Nav, Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import "../styles/NavBar.css";
+export const NavBar = () => {
+  return (
+    <Navbar id="navbar" collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Container>
+        <Navbar.Brand>
+          <Link to="/">Smoke&Barrels</Link>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+            <NavDropdown title="Firearms" id="collasible-nav-dropdown">
+              <NavDropdown.Item>
+                <Link to="/pistols">Pistols</Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link to="/rifles">Rifles</Link>
+              </NavDropdown.Item>
+            </NavDropdown>
+            <Link to="/contacts" className="custom-nav-link">
+              Contacts
+            </Link>
+            <Link to="/about" className="custom-nav-link">
+              About
+            </Link>
+          </Nav>
+          <Nav>
+            <Link to="/signup" className="custom-nav-link">
+              Sign Up
+            </Link>
+            <Link to="/login" className="custom-nav-link">
+              Log In
+            </Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
+};

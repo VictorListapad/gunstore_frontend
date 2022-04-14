@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;600&family=Roboto+Condensed:wght@300;400&display=swap");
+
+#navbar {
+  font-family: "Oswald", sans-serif;
+  font-weight: 600;
+  background: #000 !important;
+  padding: 1rem 0;
+}
+#navbar a {
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.2s linear;
+}
+#navbar a:hover {
+  color: #eeaf00;
+}
+
+.navbar-dark .navbar-toggler {
+  color: #eeaf00 !important;
+}
+
+.navbar-dark .navbar-toggler-icon {
+  filter: sepia(100%) saturate(1000%) brightness(100%) contrast(500%)
+    opacity(100%);
+}
+
+#collasible-nav-dropdown {
+  padding: 1rem 1rem;
+  font-size: 1.1rem;
+}
+.custom-nav-link {
+  font-size: 1.1rem;
+  padding: 1rem 1rem;
+}
+
+.show {
+  background: #000 !important;
+}
+
+.dropdown-item {
+  background: #000 !important;
+}

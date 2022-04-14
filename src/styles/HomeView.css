@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;600&family=Roboto+Condensed:wght@300;400&display=swap");
+#home-view {
+  font-family: "Oswald", sans-serif;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.d-block {
+  object-fit: cover;
+  object-position: center;
+  width: 100vw;
+  height: 70vh;
+}
+
+.carousel-btn {
+  background: #fff !important;
+  border: none !important;
+  color: #eeaf00 !important;
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+  padding: 0.5rem 2rem !important;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  font-size: 1.3rem !important;
+}
+.carousel-btn:hover {
+  background: #eeaf00 !important;
+  color: #fff !important;
+  outline-color: #eeaf00;
+  outline-offset: 4px;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+#featured-products {
+  width: 100vw;
+}
+#featured-products > h1 {
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .d-block {
+    height: calc(100vh - 32px - 58px);
+  }
+}
