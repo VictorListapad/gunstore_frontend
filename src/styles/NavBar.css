@@ -19,10 +19,10 @@
   color: #eeaf00 !important;
 }
 
-.navbar-dark .navbar-toggler-icon {
+/* .navbar-dark .navbar-toggler-icon {
   filter: sepia(100%) saturate(1000%) brightness(100%) contrast(500%)
     opacity(100%);
-}
+} */
 
 #collasible-nav-dropdown {
   padding: 1rem 1rem;

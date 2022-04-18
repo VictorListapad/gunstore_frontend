@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;600&family=Roboto+Condensed:wght@300;400&display=swap");
+
+.firearm-view-container {
+  font-family: "Oswald", sans-serif;
+}
+.firearm-divider {
+  height: 0.3rem;
+  width: 80%;
+  background: #eeaf00;
+}
+.firearm-intro-container {
+  height: 35rem;
+  width: 100%;
+}
+.firearm-carousel-item {
+  height: 15rem;
+}
+.firearm-carousel-item img {
+  height: 100%;
+  width: 100%;
+}
+.firearm-view-container .carousel-control-next-icon {
+  filter: invert(100%);
+}
+.firearm-view-container .carousel-control-prev-icon {
+  filter: invert(100%);
+}
+.firearm-name {
+  height: 20rem;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.firearm-description {
+  width: 80%;
+  padding: 1rem 0;
+}
+
+.firearm-spec-container {
+  width: 100%;
+  background: #eee;
+}
+
+.firearm-spec-container h1 {
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.spec-table {
+  width: 100%;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+.spec-table td {
+  padding: 0 0.5rem;
+  height: 4rem;
+  letter-spacing: 0.5px;
+}
+.spec-table th {
+  padding: 0 0.5rem;
+  height: 4rem;
+  letter-spacing: 0.5px;
+}
+.spec-name {
+  background: #000;
+  color: #fff;
+}
+
+.odd-row {
+  background: #fff;
+}
+
+@media screen and (min-width: 375px) {
+  .firearm-intro-container {
+    height: 37rem;
+    width: 100%;
+  }
+  .firearm-carousel-item {
+    height: 17rem;
+  }
+}
+@media screen and (min-width: 540px) {
+  .firearm-intro-container {
+    height: 45rem;
+    width: 100%;
+  }
+  .firearm-carousel-item {
+    height: 25rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .firearm-intro-container {
+    height: 55rem;
+    width: 100%;
+  }
+  .firearm-carousel-item {
+    height: 35rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .firearm-intro-container {
+    width: 100vw;
+    display: flex;
+    height: 30rem;
+    align-items: center;
+  }
+  .firearm-details-carousel {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .firearm-name {
+    width: 40%;
+  }
+  .firearm-carousel-item {
+    height: 100%;
+    width: 100%;
+    display: flex !important;
+    justify-content: center !important;
+  }
+  .firearm-details-carousel .carousel {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .firearm-details-carousel img {
+    width: 70%;
+  }
+}
+@media screen and (min-width: 1650px) {
+  .firearm-intro-container {
+    height: 40rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .firearm-intro-container {
+    height: 55rem;
+  }
+}
+@media screen and (min-width: 2160px) {
+  .firearm-intro-container {
+    height: 75rem;
+  }
+}

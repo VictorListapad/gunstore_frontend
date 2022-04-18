@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import "../../styles/FeaturedProductCard.css";
 const FeaturedProductCard = ({ productObj }) => {
   return (
     <div className="featured-card">
