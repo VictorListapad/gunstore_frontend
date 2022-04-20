@@ -10,3 +10,8 @@ export const getAllRifles = async () => {
 export const getRifleById = async (id) => {
   return await axios.get(`${apiUrl}/rifles/rifle/${id}`);
 };
+
+// create rifle
+export const createRifle = async (newRifle) => {
+  return await axios.post(`${apiUrl}/rifles/rifle`, newRifle);
+};

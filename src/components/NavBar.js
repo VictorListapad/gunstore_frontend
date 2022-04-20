@@ -23,6 +23,9 @@ export const NavBar = () => {
               <NavDropdown.Item>
                 <Link to="/addPistol">Add Pistol</Link>
               </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link to="/addRifle">Add Rifle</Link>
+              </NavDropdown.Item>
             </NavDropdown>
             <Link to="/contacts" className="custom-nav-link">
               Contacts

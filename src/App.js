@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { NavBar } from "./components/NavBar";
 import AddPistolView from "./views/controls/AddPistolView";
+import AddRifleView from "./views/controls/AddRifleView";
 import HomeView from "./views/HomeView";
 import PistolDetailsView from "./views/Pistols/PistolDetailsView";
 import PistolView from "./views/Pistols/PistolsView";
@@ -17,6 +18,7 @@ function App() {
         <Route path="/pistol/:id" element={<PistolDetailsView />} />
         <Route path="/rifle/:id" element={<RifleDetailsView />} />
         <Route path="/addPistol" element={<AddPistolView />} />
+        <Route path="/addRifle" element={<AddRifleView />} />
       </Routes>
     </BrowserRouter>
   );
