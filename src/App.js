@@ -4,6 +4,8 @@ import AddPistolView from "./views/controls/AddPistolView";
 import HomeView from "./views/HomeView";
 import PistolDetailsView from "./views/Pistols/PistolDetailsView";
 import PistolView from "./views/Pistols/PistolsView";
+import RifleDetailsView from "./views/Rifles/RifleDetailsView";
+import RiflesView from "./views/Rifles/RiflesView";
 function App() {
   return (
     <BrowserRouter>
@@ -11,7 +13,9 @@ function App() {
       <Routes>
         <Route path="/" element={<HomeView />} />
         <Route path="/pistols" element={<PistolView />} />
+        <Route path="/rifles" element={<RiflesView />} />
         <Route path="/pistol/:id" element={<PistolDetailsView />} />
+        <Route path="/rifle/:id" element={<RifleDetailsView />} />
         <Route path="/addPistol" element={<AddPistolView />} />
       </Routes>
     </BrowserRouter>

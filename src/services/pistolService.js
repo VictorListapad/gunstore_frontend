@@ -15,3 +15,13 @@ export const getPistolById = async (id) => {
 export const createPistol = async (newPistol) => {
   return await axios.post(`${apiUrl}/pistols/pistol`, newPistol);
 };
+
+// update pistol
+export const editPistol = async (id, updatedPistol) => {
+  return await axios.put(`${apiUrl}/pistols/pistol/${id}`, updatedPistol);
+};
+
+// delete pistol
+export const deletePistol = async (id) => {
+  return await axios.delete(`${apiUrl}/pistols/pistol/${id}`);
+};
