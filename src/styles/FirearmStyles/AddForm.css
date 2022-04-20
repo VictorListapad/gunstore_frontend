@@ -1,0 +1,17 @@
+.firearm-form input,
+.firearm-form textarea {
+  margin: 10px 0;
+}
+.add-firearm-form-container {
+  width: 100%;
+}
+.firearm-form {
+  width: 80% !important;
+  margin: 1rem auto;
+  text-align: center;
+}
+
+label span {
+  color: red;
+  font-size: 1.2rem;
+}

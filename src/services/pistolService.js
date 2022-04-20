@@ -10,3 +10,8 @@ export const getAllPistols = async () => {
 export const getPistolById = async (id) => {
   return await axios.get(`${apiUrl}/pistols/pistol/${id}`);
 };
+
+// add pistol
+export const createPistol = async (newPistol) => {
+  return await axios.post(`${apiUrl}/pistols/pistol`, newPistol);
+};

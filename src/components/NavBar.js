@@ -19,6 +19,11 @@ export const NavBar = () => {
                 <Link to="/rifles">Rifles</Link>
               </NavDropdown.Item>
             </NavDropdown>
+            <NavDropdown title="Controls" id="collasible-nav-dropdown">
+              <NavDropdown.Item>
+                <Link to="/addPistol">Add Pistol</Link>
+              </NavDropdown.Item>
+            </NavDropdown>
             <Link to="/contacts" className="custom-nav-link">
               Contacts
             </Link>
