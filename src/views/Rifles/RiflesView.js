@@ -11,7 +11,7 @@ const RiflesView = () => {
   };
   useEffect(() => {
     getRifles();
-  }, []);
+  }, [rifles]);
   return (
     <div className="firearm-view-container">
       <h1>Rifles</h1>

@@ -9,7 +9,7 @@
 .firearm-card {
   width: 100vw;
   height: 40rem;
-  border: 1px solid rgb(197, 193, 193);
+  border: 1px solid #eee;
   transition: all 0.2s linear;
   display: flex;
   flex-direction: column;
@@ -41,7 +41,6 @@
 .firearm-card-info-container > p {
   width: 90%;
   text-align: center;
-  /* margin: auto 0; */
 }
 
 .firearm-card-info-container .firearm-btn {

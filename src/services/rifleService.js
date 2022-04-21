@@ -1,4 +1,6 @@
 import axios from "axios";
+import { toast } from "react-toastify";
+
 const apiUrl = process.env.REACT_APP_API_URL;
 
 // get all rifles
@@ -14,4 +16,15 @@ export const getRifleById = async (id) => {
 // create rifle
 export const createRifle = async (newRifle) => {
   return await axios.post(`${apiUrl}/rifles/rifle`, newRifle);
+};
+
+// edit rifle
+export const editRifle = async (id, updatedRifle) => {
+  const res = await axios.put(`${apiUrl}/rifles/rifle/${id}`, updatedRifle);
+  toast.success(`${updatedRifle.model} Successfully Updated`);
+  return res;
+};
+// delete rifle
+export const deleteRifle = async (id) => {
+  return await axios.delete(`${apiUrl}/rifles/rifle/${id}`);
 };

@@ -1,4 +1,6 @@
 import axios from "axios";
+import { toast } from "react-toastify";
+
 const apiUrl = process.env.REACT_APP_API_URL;
 
 // get all pistols
@@ -18,7 +20,9 @@ export const createPistol = async (newPistol) => {
 
 // update pistol
 export const editPistol = async (id, updatedPistol) => {
-  return await axios.put(`${apiUrl}/pistols/pistol/${id}`, updatedPistol);
+  const res = await axios.put(`${apiUrl}/pistols/pistol/${id}`, updatedPistol);
+  toast.success(`${updatedPistol.model} Successfully Updated`);
+  return res;
 };
 
 // delete pistol

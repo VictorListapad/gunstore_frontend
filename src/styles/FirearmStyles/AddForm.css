@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;600&family=Roboto+Condensed:wght@300;400&display=swap");
+.firearm-form {
+  font-family: "Oswald", sans-serif;
+}
 .firearm-form input,
 .firearm-form textarea {
   margin: 10px 0;

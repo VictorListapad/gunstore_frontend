@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;600&family=Roboto+Condensed:wght@300;400&display=swap");
+
+.inventory-edit-container {
+  width: 100vw;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+}
+
+.inventory-edit-container h1 {
+  padding-top: 1rem;
+}
+
+.inventory-edit-container table {
+  width: 100%;
+  border: 1px solid black;
+}
+.inventory-edit-container img {
+  width: 65px;
+}
+.inventory-edit-container tr {
+  border: 1px solid black;
+  font-size: 0.5rem;
+}
+
+.delete-btn {
+  background: #000 !important;
+  color: #fff !important;
+  width: 60.91px;
+  font-size: 0.7rem !important;
+  transition: all 0.2s linear;
+}
+.edit-btn {
+  background: #000 !important;
+  color: #fff !important;
+  width: 60.91px;
+  font-size: 0.7rem !important;
+  transition: all 0.2s linear;
+}
+.delete-btn:hover {
+  background: #d81616 !important;
+  color: #000 !important;
+}
+.edit-btn:hover {
+  background: #eeaf00 !important;
+  color: #000 !important;
+}
+
+@media screen and (min-width: 390px) {
+  .inventory-edit-container img {
+    width: 100px;
+  }
+  .inventory-edit-container tr {
+    font-size: 0.75rem;
+  }
+
+  .delete-btn {
+    width: 72.91px;
+    font-size: 1rem !important;
+  }
+  .edit-btn {
+    width: 72.91px;
+    font-size: 1rem !important;
+  }
+}
+@media screen and (min-width: 768px) {
+  .inventory-edit-container img {
+    width: 150px;
+  }
+  .inventory-edit-container tr {
+    font-size: 1rem;
+  }
+
+  .delete-btn {
+    width: 80.91px;
+    font-size: 1.2rem !important;
+  }
+  .edit-btn {
+    width: 80.91px;
+    font-size: 1.2rem !important;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .inventory-edit-container img {
+    width: 200px;
+  }
+  .inventory-edit-container tr {
+    font-size: 1.35rem;
+  }
+
+  .delete-btn {
+    width: 90.91px;
+    font-size: 1.35rem !important;
+  }
+  .edit-btn {
+    width: 90.91px;
+    font-size: 1.35rem !important;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .inventory-edit-container img {
+    width: 275px;
+  }
+  .inventory-edit-container tr {
+    font-size: 1.5rem;
+  }
+
+  .delete-btn {
+    width: 110.91px;
+    font-size: 1.35rem !important;
+  }
+  .edit-btn {
+    width: 110.91px;
+    font-size: 1.35rem !important;
+  }
+}

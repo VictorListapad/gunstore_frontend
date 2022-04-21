@@ -6,7 +6,7 @@ export const NavBar = () => {
     <Navbar id="navbar" collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
         <Navbar.Brand>
-          <Link to="/">Smoke&Barrels</Link>
+          <Link to="/">{`Smoke&Barrels`}</Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -25,6 +25,9 @@ export const NavBar = () => {
               </NavDropdown.Item>
               <NavDropdown.Item>
                 <Link to="/addRifle">Add Rifle</Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
+                <Link to="/edit">Edit</Link>
               </NavDropdown.Item>
             </NavDropdown>
             <Link to="/contacts" className="custom-nav-link">
