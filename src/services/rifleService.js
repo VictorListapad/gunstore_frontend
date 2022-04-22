@@ -21,10 +21,16 @@ export const createRifle = async (newRifle) => {
 // edit rifle
 export const editRifle = async (id, updatedRifle) => {
   const res = await axios.put(`${apiUrl}/rifles/rifle/${id}`, updatedRifle);
-  toast.success(`${updatedRifle.model} Successfully Updated`);
+  toast.success(`${updatedRifle.model} Successfully Updated`, {
+    theme: "dark",
+  });
   return res;
 };
 // delete rifle
 export const deleteRifle = async (id) => {
-  return await axios.delete(`${apiUrl}/rifles/rifle/${id}`);
+  const res = await axios.delete(`${apiUrl}/rifles/rifle/${id}`);
+  toast.error(`Successfully Deleted`, {
+    theme: "dark",
+  });
+  return res;
 };

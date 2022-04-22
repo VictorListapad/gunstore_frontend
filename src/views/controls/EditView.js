@@ -3,6 +3,7 @@ import { deletePistol, getAllPistols } from "../../services/pistolService";
 import { deleteRifle, getAllRifles } from "../../services/rifleService";
 import { Link } from "react-router-dom";
 import "../../styles/FirearmStyles/EditView.css";
+import EditSearch from "../../components/EditSearch";
 const EditView = () => {
   const [inventory, setInventory] = useState([]);
   const getAllProducts = async () => {
@@ -23,14 +24,71 @@ const EditView = () => {
       }
       await deletePistol(id);
     }
+    getAllProducts();
+  };
+  const handleSearch = (modelStr) => {
+    if (!modelStr) {
+      getAllProducts();
+      document.getElementById(`all`).checked = true;
+    } else {
+      const filtered = inventory.filter((item) =>
+        item.model.toLowerCase().includes(modelStr.toLowerCase())
+      );
+      setInventory(filtered);
+    }
+  };
+  const getPistols = async () => {
+    const res = await getAllPistols();
+    setInventory(res.data);
+  };
+  const getRifles = async () => {
+    const res = await getAllRifles();
+    setInventory(res.data);
+  };
+  const radioCheckHandler = (event) => {
+    const value = event.target.value;
+    if (value === "pistol") {
+      getPistols();
+    } else if (value === "rifle") {
+      getRifles();
+    } else {
+      getAllProducts();
+    }
   };
   useEffect(() => {
     getAllProducts();
-  }, [inventory]);
-
+  }, []);
   return (
     <div className="inventory-edit-container">
       <h1>Inventory</h1>
+      <EditSearch search={handleSearch} />
+      <label htmlFor="all">All</label>
+      <input
+        className="radio-btn"
+        type="radio"
+        name="type"
+        value="all"
+        id="all"
+        onChange={radioCheckHandler}
+      />
+      <label htmlFor="pistol">Pistols</label>
+      <input
+        className="radio-btn"
+        type="radio"
+        name="type"
+        value="pistol"
+        id="pistol"
+        onChange={radioCheckHandler}
+      />
+      <label htmlFor="rifle">Rifles</label>
+      <input
+        className="radio-btn"
+        type="radio"
+        name="type"
+        value="rifle"
+        id="rifle"
+        onChange={radioCheckHandler}
+      />
       <table className="mt-3 edit-table">
         <tbody>
           {inventory.map((item, index) => (

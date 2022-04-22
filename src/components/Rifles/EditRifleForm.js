@@ -1,7 +1,7 @@
 const EditRifleForm = ({ rifle, cbHandleChange, cbHandleSubmit }) => {
   return (
     <form onSubmit={cbHandleSubmit} className="form-control firearm-form">
-      <h1>Add Rifle</h1>
+      <h1>Edit Rifle</h1>
       {Object.entries(rifle).map((paramName, index) =>
         paramName[0] === "description" ? (
           <div key={index}>
@@ -85,7 +85,7 @@ const EditRifleForm = ({ rifle, cbHandleChange, cbHandleSubmit }) => {
           </div>
         )
       )}
-      <button className="btn btn-primary">Add</button>
+      <button className="btn btn-primary">Submit</button>
     </form>
   );
 };

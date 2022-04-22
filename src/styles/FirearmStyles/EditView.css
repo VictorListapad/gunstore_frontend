@@ -6,20 +6,42 @@
   font-family: "Oswald", sans-serif;
 }
 
+label {
+  margin: 0 0.3rem 0 1rem;
+}
+
+.radio-btn {
+  accent-color: #000;
+}
+
+input:focus {
+  outline: none !important;
+  border: 1px solid #eeaf00 !important;
+  box-shadow: 0 0 5px #eeaf00 !important;
+}
+
+textarea:focus {
+  outline: none !important;
+  border: 1px solid #eeaf00 !important;
+  box-shadow: 0 0 5px #eeaf00 !important;
+}
 .inventory-edit-container h1 {
   padding-top: 1rem;
 }
 
 .inventory-edit-container table {
   width: 100%;
-  border: 1px solid black;
+  border: 1px solid #eee;
 }
 .inventory-edit-container img {
   width: 65px;
 }
 .inventory-edit-container tr {
-  border: 1px solid black;
+  border: 0.5px solid #eee;
   font-size: 0.5rem;
+}
+.inventory-edit-container tr:hover {
+  border: 1px solid #000;
 }
 
 .delete-btn {
