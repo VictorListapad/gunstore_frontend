@@ -3,7 +3,8 @@ const AddPistolForm = ({ newPistol, cbHandleChange, cbHandleSubmit }) => {
     <form onSubmit={cbHandleSubmit} className="form-control firearm-form">
       <h1>Add Pistol</h1>
       {Object.entries(newPistol).map((paramName, index) =>
-        paramName[0] === "description" ? (
+        paramName[0] === "shortDescription" ||
+        paramName[0] === "fullDescription" ? (
           <div key={index}>
             <label htmlFor={paramName[0]}>
               {paramName[0]}

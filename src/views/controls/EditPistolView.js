@@ -9,7 +9,8 @@ const EditPistolView = () => {
   const [pistol, setPistol] = useState({
     model: "",
     manufacturer: "",
-    description: "",
+    shortDescription: "",
+    fullDescription: "",
     availability: "",
     sku: "",
     caliber: "",

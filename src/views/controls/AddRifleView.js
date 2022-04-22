@@ -8,7 +8,8 @@ const AddRifleView = () => {
   const [rifle, setRifle] = useState({
     model: "",
     manufacturer: "",
-    description: "",
+    shortDescription: "",
+    fullDescription: "",
     availability: "",
     sku: "",
     caliber: "",

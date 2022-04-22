@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const EditSearch = ({ search }) => {
+const Search = ({ search }) => {
   const [searchModel, setSearchModel] = useState("");
   const handleSubmit = () => {
     search(searchModel);
@@ -28,4 +28,4 @@ const EditSearch = ({ search }) => {
   );
 };
 
-export default EditSearch;
+export default Search;

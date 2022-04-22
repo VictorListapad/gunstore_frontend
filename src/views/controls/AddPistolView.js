@@ -7,6 +7,8 @@ const AddPistolView = () => {
   const [newPistol, setNewPistol] = useState({
     model: "",
     manufacturer: "",
+    shortDescription: "",
+    fullDescription: "",
     description: "",
     availability: "",
     sku: "",

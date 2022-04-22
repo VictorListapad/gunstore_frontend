@@ -27,5 +27,9 @@ export const editPistol = async (id, updatedPistol) => {
 
 // delete pistol
 export const deletePistol = async (id) => {
-  return await axios.delete(`${apiUrl}/pistols/pistol/${id}`);
+  const res = await axios.delete(`${apiUrl}/pistols/pistol/${id}`);
+  toast.error(`Successfully Deleted`, {
+    theme: "dark",
+  });
+  return res;
 };

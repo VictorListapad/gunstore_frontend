@@ -23,7 +23,7 @@ const PistolDetailsView = () => {
         <div className="firearm-name">
           <h1 className="firearm-title">{pistol.model}</h1>
           <div className="firearm-divider"></div>
-          <p className="firearm-description">{pistol.description}</p>
+          <p className="firearm-description">{pistol.shortDescription}</p>
         </div>
       </div>
       <div className="firearm-spec-container">
