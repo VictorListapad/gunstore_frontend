@@ -8,7 +8,7 @@ const RifleCard = ({ rifleObj }) => {
       </div>
       <div className="firearm-card-info-container">
         <h5>{rifleObj.model}</h5>
-        <p>{rifleObj.description}</p>
+        <p>{rifleObj.shortDescription}</p>
         <h5>{`$${rifleObj.price}`}</h5>
         <Link className="firearm-btn" to={`/rifle/${rifleObj._id}`}>
           SEE MORE

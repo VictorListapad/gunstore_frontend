@@ -19,6 +19,18 @@ export const NavBar = () => {
                 <Link to="/rifles">Rifles</Link>
               </NavDropdown.Item>
             </NavDropdown>
+            <Link to="/ammunition" className="custom-nav-link">
+              Ammunition
+            </Link>
+            <Link to="/gear" className="custom-nav-link">
+              Gear
+            </Link>
+            <Link to="/contacts" className="custom-nav-link">
+              Contacts
+            </Link>
+            <Link to="/about" className="custom-nav-link">
+              About
+            </Link>
             <NavDropdown title="Controls" id="collasible-nav-dropdown">
               <NavDropdown.Item>
                 <Link to="/addPistol">Add Pistol</Link>
@@ -30,12 +42,6 @@ export const NavBar = () => {
                 <Link to="/edit">Edit</Link>
               </NavDropdown.Item>
             </NavDropdown>
-            <Link to="/contacts" className="custom-nav-link">
-              Contacts
-            </Link>
-            <Link to="/about" className="custom-nav-link">
-              About
-            </Link>
           </Nav>
           <Nav>
             <Link to="/signup" className="custom-nav-link">

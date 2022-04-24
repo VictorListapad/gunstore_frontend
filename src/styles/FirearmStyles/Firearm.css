@@ -83,9 +83,7 @@
 @media screen and (min-width: 1024px) {
   .firearm-card {
     width: 33.3vw;
-  }
-  .firearm-card {
-    height: 50rem;
+    max-height: 50rem;
   }
   .firearm-card-img-container {
     height: 25rem;
