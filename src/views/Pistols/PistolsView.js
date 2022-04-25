@@ -26,7 +26,7 @@ const PistolView = () => {
       const filtered = pistols.filter((item) =>
         item.model.toLowerCase().includes(modelStr.toLowerCase())
       );
-      setPistols(filtered);
+      setPistols(filtered.reverse());
     }
   };
 

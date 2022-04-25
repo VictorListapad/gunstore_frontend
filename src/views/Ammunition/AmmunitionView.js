@@ -8,7 +8,7 @@ const AmmunitionView = () => {
   const [ammunition, setAmmunition] = useState([]);
   const getAmmunition = async () => {
     const res = await getAllAmmunition();
-    setAmmunition(res.data);
+    setAmmunition(res.data.reverse());
   };
 
   const handleSearch = (modelStr) => {

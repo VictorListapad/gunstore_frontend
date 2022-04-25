@@ -8,7 +8,7 @@ const RiflesView = () => {
   const [rifles, setRifles] = useState([]);
   const getRifles = async () => {
     const res = await getAllRifles();
-    setRifles(res.data);
+    setRifles(res.data.reverse());
   };
   const handleSearch = (modelStr) => {
     if (!modelStr) {

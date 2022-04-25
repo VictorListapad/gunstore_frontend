@@ -25,8 +25,8 @@ const AmmunitionDetailsView = () => {
         </div>
         <div className="firearm-name">
           <h1 className="firearm-title">
-            {ammo.caliber},{ammo.grainWeight} Gr, {ammo.model}, {ammo.ammoType}{" "}
-            - {ammo.qtyPerPackage} Count
+            {ammo.caliber},{ammo.grainWeight} Gr, {ammo.model}, {ammo.ammoType}-
+            {ammo.qtyPerPackage} Count
           </h1>
           <div className="firearm-divider"></div>
           <p className="firearm-description">

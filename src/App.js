@@ -3,8 +3,10 @@ import { ToastContainer } from "react-toastify";
 import { NavBar } from "./components/NavBar";
 import AmmunitionDetailsView from "./views/Ammunition/AmmunitionDetailsView";
 import AmmunitionView from "./views/Ammunition/AmmunitionView";
+import AddAmmunitionView from "./views/controls/AddAmmunitionView";
 import AddPistolView from "./views/controls/AddPistolView";
 import AddRifleView from "./views/controls/AddRifleView";
+import EditAmmunitionView from "./views/controls/EditAmmunitionView";
 import EditPistolView from "./views/controls/EditPistolView";
 import EditRifleView from "./views/controls/EditRifleView";
 import EditView from "./views/controls/EditView";
@@ -31,6 +33,8 @@ function App() {
         <Route path="/edit" element={<EditView />} />
         <Route path="/ammunition" element={<AmmunitionView />} />
         <Route path="/ammo/:id" element={<AmmunitionDetailsView />} />
+        <Route path="/ammunitionEdit/:id" element={<EditAmmunitionView />} />
+        <Route path="/addAmmo" element={<AddAmmunitionView />} />
       </Routes>
     </BrowserRouter>
   );

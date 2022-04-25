@@ -21,7 +21,9 @@ export const createPistol = async (newPistol) => {
 // update pistol
 export const editPistol = async (id, updatedPistol) => {
   const res = await axios.put(`${apiUrl}/pistols/pistol/${id}`, updatedPistol);
-  toast.success(`${updatedPistol.model} Successfully Updated`);
+  toast.success(`${updatedPistol.model} Successfully Updated`, {
+    theme: "dark",
+  });
   return res;
 };
 

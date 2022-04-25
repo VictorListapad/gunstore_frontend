@@ -15,7 +15,11 @@ export const getRifleById = async (id) => {
 
 // create rifle
 export const createRifle = async (newRifle) => {
-  return await axios.post(`${apiUrl}/rifles/rifle`, newRifle);
+  const res = await axios.post(`${apiUrl}/rifles/rifle`, newRifle);
+  toast.success(`${newRifle.model} Added`, {
+    theme: "dark",
+  });
+  return res;
 };
 
 // edit rifle

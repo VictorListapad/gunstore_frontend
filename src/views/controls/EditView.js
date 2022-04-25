@@ -4,7 +4,10 @@ import { deleteRifle, getAllRifles } from "../../services/rifleService";
 import { Link } from "react-router-dom";
 import "../../styles/FirearmStyles/EditView.css";
 import Search from "../../components/Search";
-import { getAllAmmunition } from "../../services/ammunitionService";
+import {
+  deleteAmmunition,
+  getAllAmmunition,
+} from "../../services/ammunitionService";
 const EditView = () => {
   const [inventory, setInventory] = useState([]);
   const [value, setValue] = useState("all");
@@ -28,7 +31,13 @@ const EditView = () => {
         return;
       }
       await deletePistol(id);
+    } else if (itemType === "ammunition") {
+      if (!choice) {
+        return;
+      }
+      await deleteAmmunition(id);
     }
+    setValue(`all`);
     getAllProducts();
   };
   const handleSearch = (modelStr) => {
