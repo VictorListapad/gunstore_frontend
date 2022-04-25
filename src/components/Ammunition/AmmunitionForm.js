@@ -1,7 +1,11 @@
 const EditAmmunitionForm = ({ ammo, cbHandleChange, cbHandleSubmit }) => {
   return (
     <form onSubmit={cbHandleSubmit} className="form-control firearm-form">
-      <h1>Edit Ammunition</h1>
+      <h1>
+        {window.location.href.includes(`/add`)
+          ? `Add Ammunition`
+          : `Edit Ammunition`}
+      </h1>
       {Object.entries(ammo).map((paramName, index) =>
         paramName[0] === "shortDescription" ||
         paramName[0] === "fullDescription" ? (

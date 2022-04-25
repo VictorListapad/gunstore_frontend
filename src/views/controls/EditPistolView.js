@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
-import EditPistolForm from "../../components/Pistols/EditPistolForm";
+import PistolForm from "../../components/Pistols/PistolForm";
 import { editPistol, getPistolById } from "../../services/pistolService";
 
 const EditPistolView = () => {
@@ -69,7 +69,7 @@ const EditPistolView = () => {
   };
   return (
     <div className="add-firearm-form-container">
-      <EditPistolForm
+      <PistolForm
         pistol={pistol}
         cbHandleChange={handleChange}
         cbHandleSubmit={handleSubmit}

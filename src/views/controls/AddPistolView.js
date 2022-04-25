@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import AddPistolForm from "../../components/Pistols/AddPistolForm";
+import PistolForm from "../../components/Pistols/PistolForm";
 import { createPistol } from "../../services/pistolService";
 import "../../styles/FirearmStyles/AddForm.css";
 const AddPistolView = () => {
@@ -62,8 +62,8 @@ const AddPistolView = () => {
   }
   return (
     <div className="add-firearm-form-container">
-      <AddPistolForm
-        newPistol={newPistol}
+      <PistolForm
+        pistol={newPistol}
         cbHandleChange={handleChange}
         cbHandleSubmit={handleSubmit}
       />

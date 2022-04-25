@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router";
-import EditRifleForm from "../../components/Rifles/EditRifleForm";
+import RifleForm from "../../components/Rifles/RifleForm";
 import { editRifle, getRifleById } from "../../services/rifleService";
 
 const EditRifleView = () => {
@@ -62,7 +62,7 @@ const EditRifleView = () => {
   };
   return (
     <div className="add-firearm-form-container">
-      <EditRifleForm
+      <RifleForm
         rifle={rifle}
         cbHandleChange={handleChange}
         cbHandleSubmit={handleSubmit}
