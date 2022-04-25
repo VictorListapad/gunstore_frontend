@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { NavBar } from "./components/NavBar";
+import AmmunitionDetailsView from "./views/Ammunition/AmmunitionDetailsView";
 import AmmunitionView from "./views/Ammunition/AmmunitionView";
 import AddPistolView from "./views/controls/AddPistolView";
 import AddRifleView from "./views/controls/AddRifleView";
@@ -29,6 +30,7 @@ function App() {
         <Route path="/rifleEdit/:id" element={<EditRifleView />} />
         <Route path="/edit" element={<EditView />} />
         <Route path="/ammunition" element={<AmmunitionView />} />
+        <Route path="/ammo/:id" element={<AmmunitionDetailsView />} />
       </Routes>
     </BrowserRouter>
   );

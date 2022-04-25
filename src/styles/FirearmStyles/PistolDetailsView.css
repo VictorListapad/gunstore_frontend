@@ -47,9 +47,24 @@
   background: #eee;
 }
 
-.firearm-spec-container h1 {
+.firearm-details {
+  padding: 1rem 0 2rem 0;
+}
+.firearm-details p {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 1rem;
+}
+h3 {
   text-align: center;
-  padding: 0.5rem 0;
+  padding: 1rem 0;
+}
+.firearm-details h3 {
+  padding: 0;
+}
+.firearm-spec-container h3 {
+  text-align: center;
+  padding: 1rem 0;
 }
 
 .spec-table {

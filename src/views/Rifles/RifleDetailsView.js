@@ -28,6 +28,10 @@ const RifleDetailsView = () => {
           <p className="firearm-description">{rifle.shortDescription}</p>
         </div>
       </div>
+      <div className="firearm-details">
+        <h3>Details</h3>
+        <p>{rifle.fullDescription}</p>
+      </div>
       <div className="firearm-spec-container">
         <RifleSpecTable rifle={rifle} />
       </div>

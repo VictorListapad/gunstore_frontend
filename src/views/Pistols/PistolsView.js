@@ -6,9 +6,17 @@ import "../../styles/FirearmStyles/Firearm.css";
 
 const PistolView = () => {
   const [pistols, setPistols] = useState([]);
+  const [value, setValue] = useState("all");
   const getPistols = async () => {
     const res = await getAllPistols();
-    setPistols(res.data);
+    if (value === "all") {
+      setPistols(res.data.reverse());
+    } else {
+      const filtered = res.data.filter((pistol) =>
+        pistol.caliber.toLowerCase().includes(value.toLocaleLowerCase())
+      );
+      setPistols(filtered.reverse());
+    }
   };
 
   const handleSearch = (modelStr) => {
@@ -22,15 +30,50 @@ const PistolView = () => {
     }
   };
 
+  const radioCheckHandler = (event) => {
+    setValue(event.target.value);
+  };
   useEffect(() => {
-    getPistols();
-  }, []);
+    getPistols(value);
+  }, [value]);
 
   return (
     <div className="firearm-window">
       <div className="view-header">
         <h1>Pistols</h1>
         <Search search={handleSearch} />
+        <div className="radio-btns-container">
+          <label htmlFor="all">All</label>
+          <input
+            className="radio-btn"
+            type="radio"
+            name="caliber"
+            value="all"
+            id="all"
+            onChange={radioCheckHandler}
+            checked={value === "all"}
+          />
+          <label htmlFor="9mm">9mm</label>
+          <input
+            className="radio-btn"
+            type="radio"
+            name="caliber"
+            value="9mm Luger"
+            id="9mm"
+            onChange={radioCheckHandler}
+            checked={value === "9mm Luger"}
+          />
+          <label htmlFor="45Auto">.45 Auto</label>
+          <input
+            className="radio-btn"
+            type="radio"
+            name="caliber"
+            value="45 Auto"
+            id="45Auto"
+            onChange={radioCheckHandler}
+            checked={value === "45 Auto"}
+          />
+        </div>
       </div>
       <div className="firearm-view-container">
         {pistols.map((pistol) => (

@@ -1,7 +1,7 @@
 export const RifleSpecTable = ({ rifle }) => {
   return (
     <>
-      <h1>Specifications</h1>
+      <h3>Specifications</h3>
       <table className="spec-table">
         <thead>
           <tr>

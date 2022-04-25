@@ -4,13 +4,17 @@ import { deleteRifle, getAllRifles } from "../../services/rifleService";
 import { Link } from "react-router-dom";
 import "../../styles/FirearmStyles/EditView.css";
 import Search from "../../components/Search";
+import { getAllAmmunition } from "../../services/ammunitionService";
 const EditView = () => {
   const [inventory, setInventory] = useState([]);
   const [value, setValue] = useState("all");
   const getAllProducts = async () => {
     const rifles = await getAllRifles();
     const pistols = await getAllPistols();
-    setInventory([...rifles.data, ...pistols.data]);
+    const ammunition = await getAllAmmunition();
+    setInventory(
+      [...ammunition.data, ...rifles.data, ...pistols.data].reverse()
+    );
   };
   const handleDelete = async (itemType, id) => {
     const choice = window.confirm(`Are you sure you want to delete this item?`);
@@ -38,13 +42,17 @@ const EditView = () => {
       setInventory(filtered);
     }
   };
+  const getAmmunition = async () => {
+    const res = await getAllAmmunition();
+    setInventory(res.data.reverse());
+  };
   const getPistols = async () => {
     const res = await getAllPistols();
-    setInventory(res.data);
+    setInventory(res.data.reverse());
   };
   const getRifles = async () => {
     const res = await getAllRifles();
-    setInventory(res.data);
+    setInventory(res.data.reverse());
   };
   const radioCheckHandler = (event) => {
     setValue(event.target.value);
@@ -54,6 +62,8 @@ const EditView = () => {
       getRifles();
     } else if (value === "pistol") {
       getPistols();
+    } else if (value === "ammunition") {
+      getAmmunition();
     } else {
       getAllProducts();
     }
@@ -92,6 +102,16 @@ const EditView = () => {
           id="rifle"
           onChange={radioCheckHandler}
           checked={value === "rifle"}
+        />
+        <label htmlFor="ammunition">Ammunition</label>
+        <input
+          className="radio-btn"
+          type="radio"
+          name="type"
+          value="ammunition"
+          id="ammunition"
+          onChange={radioCheckHandler}
+          checked={value === "ammunition"}
         />
       </div>
       <table className="mt-3 edit-table">
