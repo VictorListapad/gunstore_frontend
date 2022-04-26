@@ -6,10 +6,10 @@ import "../../styles/FirearmStyles/AddForm.css";
 const AddPistolView = () => {
   const [newPistol, setNewPistol] = useState({
     model: "",
+    newProduct: "",
     manufacturer: "",
     shortDescription: "",
     fullDescription: "",
-    description: "",
     availability: "",
     sku: "",
     caliber: "",

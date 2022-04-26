@@ -8,6 +8,7 @@ const EditRifleView = () => {
   const { id } = useParams();
   const [rifle, setRifle] = useState({
     model: "",
+    newProduct: "",
     manufacturer: "",
     shortDescription: "",
     fullDescription: "",

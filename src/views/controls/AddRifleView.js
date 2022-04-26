@@ -7,6 +7,7 @@ import "../../styles/FirearmStyles/AddForm.css";
 const AddRifleView = () => {
   const [rifle, setRifle] = useState({
     model: "",
+    newProduct: "",
     manufacturer: "",
     shortDescription: "",
     fullDescription: "",

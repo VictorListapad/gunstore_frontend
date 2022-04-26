@@ -14,7 +14,7 @@ export const getAmmunitionById = async (id) => {
 // create ammunition
 export const createAmmunition = async (newAmmo) => {
   const res = await axios.post(`${apiUrl}/ammunition/ammo`, newAmmo);
-  toast.success(`${newAmmo.model}, ${newAmmo.grainWeight} Added`, {
+  toast.success(`${newAmmo.model}, ${newAmmo.grainWeight} Gr Added`, {
     theme: "dark",
   });
   return res;

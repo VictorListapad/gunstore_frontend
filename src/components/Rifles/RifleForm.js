@@ -56,6 +56,21 @@ const RifleForm = ({ rifle, cbHandleChange, cbHandleSubmit }) => {
                 <option value="Available">Available</option>
                 <option value="Unavailable">Unavailable</option>
               </select>
+            ) : paramName[0] === "newProduct" ? (
+              <select
+                className="form-control"
+                name={paramName[0]}
+                id={paramName[0]}
+                onChange={cbHandleChange}
+                defaultValue={rifle.newProduct}
+                required
+              >
+                <option value="" disabled>
+                  Is it a new product
+                </option>
+                <option value={true}>Yes</option>
+                <option value={false}>No</option>
+              </select>
             ) : paramName[0] === "type" ||
               paramName[0] === "_id" ||
               paramName[0] === "__v" ? null : paramName[0] !== "extraImg1" &&

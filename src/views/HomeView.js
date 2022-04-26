@@ -4,6 +4,7 @@ import Gear from "../images/gear.jpg";
 import Rifle from "../images/rifle.jpg";
 import Smg from "../images/smg.jpg";
 import Pistol from "../images/pistol.jpeg";
+import Ammunition from "../images/ammunition.jpg";
 import "../styles/HomeView.css";
 import FeaturedProducts from "../components/Featured/FeaturedProducts";
 const HomeView = () => {
@@ -50,6 +51,18 @@ const HomeView = () => {
           </Carousel.Caption>
           <Link className="btn btn-primary carousel-btn" to="/gear">
             SHOP GEAR
+          </Link>
+        </Carousel.Item>
+        <Carousel.Item interval={5000}>
+          <img className="d-block" src={Ammunition} alt="Fourth slide" />
+          <Carousel.Caption>
+            <h3>Third slide label</h3>
+            <p>
+              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+            </p>
+          </Carousel.Caption>
+          <Link className="btn btn-primary carousel-btn" to="/ammunition">
+            SHOP AMMO
           </Link>
         </Carousel.Item>
       </Carousel>

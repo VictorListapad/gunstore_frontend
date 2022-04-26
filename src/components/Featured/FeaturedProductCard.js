@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 const FeaturedProductCard = ({ productObj }) => {
   return (
     <div className="featured-card">
+      {productObj.newProduct ? <div className="newItem">New</div> : null}
       <div className="featured-card-img-container">
         <img src={productObj.titleImg} alt="" />
       </div>

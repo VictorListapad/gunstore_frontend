@@ -10,6 +10,7 @@ import EditAmmunitionView from "./views/controls/EditAmmunitionView";
 import EditPistolView from "./views/controls/EditPistolView";
 import EditRifleView from "./views/controls/EditRifleView";
 import EditView from "./views/controls/EditView";
+import GearView from "./views/Gear/GearView";
 import HomeView from "./views/HomeView";
 import PistolDetailsView from "./views/Pistols/PistolDetailsView";
 import PistolView from "./views/Pistols/PistolsView";
@@ -28,13 +29,14 @@ function App() {
         <Route path="/rifle/:id" element={<RifleDetailsView />} />
         <Route path="/addPistol" element={<AddPistolView />} />
         <Route path="/addRifle" element={<AddRifleView />} />
+        <Route path="/edit" element={<EditView />} />
         <Route path="/pistolEdit/:id" element={<EditPistolView />} />
         <Route path="/rifleEdit/:id" element={<EditRifleView />} />
-        <Route path="/edit" element={<EditView />} />
         <Route path="/ammunition" element={<AmmunitionView />} />
         <Route path="/ammo/:id" element={<AmmunitionDetailsView />} />
         <Route path="/ammunitionEdit/:id" element={<EditAmmunitionView />} />
         <Route path="/addAmmo" element={<AddAmmunitionView />} />
+        <Route path="/gear" element={<GearView />} />
       </Routes>
     </BrowserRouter>
   );

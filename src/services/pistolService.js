@@ -15,7 +15,11 @@ export const getPistolById = async (id) => {
 
 // add pistol
 export const createPistol = async (newPistol) => {
-  return await axios.post(`${apiUrl}/pistols/pistol`, newPistol);
+  const res = await axios.post(`${apiUrl}/pistols/pistol`, newPistol);
+  toast.success(`${newPistol.model} Successfully Updated`, {
+    theme: "dark",
+  });
+  return res;
 };
 
 // update pistol

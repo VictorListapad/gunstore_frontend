@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 const RifleCard = ({ rifleObj }) => {
   return (
     <div className="firearm-card">
+      {rifleObj.newProduct ? <div className="newItem">New</div> : null}
       <div className="firearm-card-img-container">
         <img src={rifleObj.titleImg} alt="" />
       </div>
