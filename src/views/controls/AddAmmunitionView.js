@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 import AmmunitionForm from "../../components/Ammunition/AmmunitionForm";
 import { createAmmunition } from "../../services/ammunitionService";
+import "../../styles/FirearmStyles/AddForm.css";
 
 const AddAmmunitionView = () => {
   const [newAmmo, setNewAmmo] = useState({

@@ -3,7 +3,8 @@
   font-family: "Oswald", sans-serif;
 }
 .firearm-form input,
-.firearm-form textarea {
+.firearm-form textarea,
+.firearm-form select {
   margin: 10px 0;
 }
 .add-firearm-form-container {

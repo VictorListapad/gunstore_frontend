@@ -4,6 +4,7 @@ import { NavBar } from "./components/NavBar";
 import AmmunitionDetailsView from "./views/Ammunition/AmmunitionDetailsView";
 import AmmunitionView from "./views/Ammunition/AmmunitionView";
 import AddAmmunitionView from "./views/controls/AddAmmunitionView";
+import AddGearView from "./views/controls/AddGearView";
 import AddPistolView from "./views/controls/AddPistolView";
 import AddRifleView from "./views/controls/AddRifleView";
 import EditAmmunitionView from "./views/controls/EditAmmunitionView";
@@ -37,6 +38,7 @@ function App() {
         <Route path="/ammunitionEdit/:id" element={<EditAmmunitionView />} />
         <Route path="/addAmmo" element={<AddAmmunitionView />} />
         <Route path="/gear" element={<GearView />} />
+        <Route path="/addGear" element={<AddGearView />} />
       </Routes>
     </BrowserRouter>
   );
