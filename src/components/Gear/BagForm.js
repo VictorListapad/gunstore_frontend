@@ -1,4 +1,4 @@
-const HolsterForm = ({ gear, cbHandleChange }) => {
+const BagForm = ({ gear, cbHandleChange }) => {
   return (
     <>
       <label htmlFor="model">
@@ -178,4 +178,4 @@ const HolsterForm = ({ gear, cbHandleChange }) => {
   );
 };
 
-export default HolsterForm;
+export default BagForm;

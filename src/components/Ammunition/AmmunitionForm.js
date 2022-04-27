@@ -84,7 +84,7 @@ const EditAmmunitionForm = ({ ammo, cbHandleChange, cbHandleSubmit }) => {
           </div>
         )
       )}
-      <button className="btn btn-primary">Submit</button>
+      <button className="btn edit-btn">Submit</button>
     </form>
   );
 };

@@ -29,6 +29,16 @@ const PistolDetailsView = () => {
       <div className="firearm-details">
         <h3>Details</h3>
         <p>{pistol.fullDescription}</p>
+        {pistol.features ? (
+          <div className="firearm-features">
+            <h3>Features</h3>
+            <ul>
+              {pistol.features.split(",").map((feature) => (
+                <li>{feature}</li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
       </div>
       <div className="firearm-spec-container">
         <PistolSpecTable pistol={pistol} />

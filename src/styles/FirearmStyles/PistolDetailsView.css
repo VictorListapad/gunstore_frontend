@@ -49,11 +49,13 @@
 
 .firearm-details {
   padding: 1rem 0 2rem 0;
+  width: 100%;
 }
 .firearm-details p {
   width: 80%;
   margin: 0 auto;
-  padding-top: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 h3 {
   text-align: center;

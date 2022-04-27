@@ -42,6 +42,9 @@ export const NavBar = () => {
                 <Link to="/addAmmo">Add Ammo</Link>
               </NavDropdown.Item>
               <NavDropdown.Item>
+                <Link to="/addGear">Add Gear</Link>
+              </NavDropdown.Item>
+              <NavDropdown.Item>
                 <Link to="/edit">Edit</Link>
               </NavDropdown.Item>
             </NavDropdown>

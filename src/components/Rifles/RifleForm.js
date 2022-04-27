@@ -24,6 +24,20 @@ const RifleForm = ({ rifle, cbHandleChange, cbHandleSubmit }) => {
               required
             />
           </div>
+        ) : paramName[0] === "features" ? (
+          <div key={index}>
+            <label htmlFor={paramName[0]}>{paramName[0]}</label>
+            <textarea
+              className="form-control"
+              rows={5}
+              type={typeof paramName[1]}
+              placeholder={paramName[0]}
+              name={paramName[0]}
+              value={rifle[paramName[0]]}
+              onChange={cbHandleChange}
+              id={paramName[0]}
+            />
+          </div>
         ) : (
           <div key={index}>
             {paramName[0] === "type" ||
@@ -103,7 +117,7 @@ const RifleForm = ({ rifle, cbHandleChange, cbHandleSubmit }) => {
           </div>
         )
       )}
-      <button className="btn btn-primary">Submit</button>
+      <button className="btn edit-btn">Submit</button>
     </form>
   );
 };

@@ -8,9 +8,11 @@ import AddGearView from "./views/controls/AddGearView";
 import AddPistolView from "./views/controls/AddPistolView";
 import AddRifleView from "./views/controls/AddRifleView";
 import EditAmmunitionView from "./views/controls/EditAmmunitionView";
+import EditGearView from "./views/controls/EditGearView";
 import EditPistolView from "./views/controls/EditPistolView";
 import EditRifleView from "./views/controls/EditRifleView";
 import EditView from "./views/controls/EditView";
+import GearDetailsView from "./views/Gear/GearDetailsView";
 import GearView from "./views/Gear/GearView";
 import HomeView from "./views/HomeView";
 import PistolDetailsView from "./views/Pistols/PistolDetailsView";
@@ -39,6 +41,8 @@ function App() {
         <Route path="/addAmmo" element={<AddAmmunitionView />} />
         <Route path="/gear" element={<GearView />} />
         <Route path="/addGear" element={<AddGearView />} />
+        <Route path="/item/:id" element={<GearDetailsView />} />
+        <Route path="/gearEdit/:id" element={<EditGearView />} />
       </Routes>
     </BrowserRouter>
   );

@@ -15,7 +15,7 @@ export const getGearById = async (id) => {
 // create gear
 export const createGear = async (newGear) => {
   const res = await axios.post(`${apiUrl}/gear/item`, newGear);
-  toast.success(`${newGear.name} Added`, {
+  toast.success(`${newGear.model} Added`, {
     theme: "dark",
   });
   return res;
@@ -24,7 +24,7 @@ export const createGear = async (newGear) => {
 // update gear
 export const updateGear = async (id, updatedGear) => {
   const res = await axios.put(`${apiUrl}/gear/item/${id}`, updatedGear);
-  toast.success(`${updatedGear.name} Successfully Updated`, {
+  toast.success(`${updatedGear.model} Successfully Updated`, {
     theme: "dark",
   });
   return res;
@@ -33,7 +33,7 @@ export const updateGear = async (id, updatedGear) => {
 // delete gear
 export const deleteGear = async (id) => {
   const res = await axios.delete(`${apiUrl}/gear/item/${id}`);
-  toast.success(`Successfully Updated`, {
+  toast.success(`Successfully Deleted`, {
     theme: "dark",
   });
   return res;

@@ -1,4 +1,4 @@
-const HolsterForm = ({ gear, cbHandleChange }) => {
+const EyeEarProtectionForm = ({ gear, cbHandleChange }) => {
   return (
     <>
       <label htmlFor="model">
@@ -118,6 +118,16 @@ const HolsterForm = ({ gear, cbHandleChange }) => {
         placeholder="color"
         value={gear.color}
       />
+      <label htmlFor="battery">Battery</label>
+      <input
+        id="battery"
+        className="form-control"
+        type="text"
+        onChange={cbHandleChange}
+        name="battery"
+        placeholder="battery"
+        value={gear.battery}
+      />
       <label htmlFor="price">
         Price<span>*</span>
       </label>
@@ -178,4 +188,4 @@ const HolsterForm = ({ gear, cbHandleChange }) => {
   );
 };
 
-export default HolsterForm;
+export default EyeEarProtectionForm;

@@ -1,4 +1,4 @@
-const HolsterForm = ({ gear, cbHandleChange }) => {
+const OpticsForm = ({ gear, cbHandleChange }) => {
   return (
     <>
       <label htmlFor="model">
@@ -118,6 +118,56 @@ const HolsterForm = ({ gear, cbHandleChange }) => {
         placeholder="color"
         value={gear.color}
       />
+      <label htmlFor="overallLength">Overall Length</label>
+      <input
+        id="overallLength"
+        className="form-control"
+        type="text"
+        onChange={cbHandleChange}
+        name="overallLength"
+        placeholder="overallLength"
+        value={gear.overallLength}
+      />
+      <label htmlFor="overallWidth">Overall Width</label>
+      <input
+        id="overallWidth"
+        className="form-control"
+        type="text"
+        onChange={cbHandleChange}
+        name="overallWidth"
+        placeholder="overallWidth"
+        value={gear.overallWidth}
+      />
+      <label htmlFor="weight">Weight</label>
+      <input
+        id="weight"
+        className="form-control"
+        type="text"
+        onChange={cbHandleChange}
+        name="weight"
+        placeholder="weight"
+        value={gear.weight}
+      />
+      <label htmlFor="attachmentType">Attachment Type</label>
+      <input
+        id="attachmentType"
+        className="form-control"
+        type="text"
+        onChange={cbHandleChange}
+        name="attachmentType"
+        placeholder="attachmentType"
+        value={gear.attachmentType}
+      />
+      <label htmlFor="battery">Battery</label>
+      <input
+        id="battery"
+        className="form-control"
+        type="text"
+        onChange={cbHandleChange}
+        name="battery"
+        placeholder="battery"
+        value={gear.battery}
+      />
       <label htmlFor="price">
         Price<span>*</span>
       </label>
@@ -178,4 +228,4 @@ const HolsterForm = ({ gear, cbHandleChange }) => {
   );
 };
 
-export default HolsterForm;
+export default OpticsForm;

@@ -1,7 +1,9 @@
 const KnifeForm = ({ gear, cbHandleChange }) => {
   return (
     <>
-      <label htmlFor="model">Model</label>
+      <label htmlFor="model">
+        Model<span>*</span>
+      </label>
       <input
         id="model"
         className="form-control"
@@ -10,14 +12,18 @@ const KnifeForm = ({ gear, cbHandleChange }) => {
         name="model"
         placeholder="model"
         value={gear.model}
+        required
       />
-      <label htmlFor="newProduct">New Product</label>
+      <label htmlFor="newProduct">
+        New Product<span>*</span>
+      </label>
       <select
         id="newProduct"
         className="form-control"
         name="newProduct"
         onChange={cbHandleChange}
         defaultValue={gear.newProduct}
+        required
       >
         <option value="" disabled>
           Is it a new product
@@ -25,19 +31,24 @@ const KnifeForm = ({ gear, cbHandleChange }) => {
         <option value={true}>Yes</option>
         <option value={false}>No</option>
       </select>
-      <label htmlFor="availability">Availability</label>
+      <label htmlFor="availability">
+        Availability<span>*</span>
+      </label>
       <select
         id="availability"
         className="form-control"
         name="availability"
         onChange={cbHandleChange}
         defaultValue={gear.availability}
+        required
       >
         <option value="">Choose availability</option>
         <option value="Available">Available</option>
         <option value="Unavailable">Unavailable</option>
       </select>
-      <label htmlFor="manufacturer">Manufacturer</label>
+      <label htmlFor="manufacturer">
+        Manufacturer<span>*</span>
+      </label>
       <input
         id="manufacturer"
         className="form-control"
@@ -46,9 +57,13 @@ const KnifeForm = ({ gear, cbHandleChange }) => {
         name={"manufacturer"}
         placeholder="manufacturer"
         value={gear.manufacturer}
+        required
       />
-      <label htmlFor="shortDescription">Short Description</label>
-      <input
+      <label htmlFor="shortDescription">
+        Short Description<span>*</span>
+      </label>
+      <textarea
+        rows={5}
         id="shortDescription"
         className="form-control"
         type="text"
@@ -56,9 +71,13 @@ const KnifeForm = ({ gear, cbHandleChange }) => {
         name={"shortDescription"}
         placeholder="shortDescription"
         value={gear.shortDescription}
+        required
       />
-      <label htmlFor="fullDescription">Full Description</label>
-      <input
+      <label htmlFor="fullDescription">
+        Full Description<span>*</span>
+      </label>
+      <textarea
+        rows={5}
         id="fullDescription"
         className="form-control"
         type="text"
@@ -66,6 +85,18 @@ const KnifeForm = ({ gear, cbHandleChange }) => {
         name="fullDescription"
         placeholder="fullDescription"
         value={gear.fullDescription}
+        required
+      />
+      <label htmlFor="features">Features (Separate with Comma)</label>
+      <textarea
+        rows={5}
+        id="features"
+        className="form-control"
+        type="text"
+        onChange={cbHandleChange}
+        name={"features"}
+        placeholder="features"
+        value={gear.features}
       />
       <label htmlFor="overallLength">Overall Length</label>
       <input
@@ -117,7 +148,9 @@ const KnifeForm = ({ gear, cbHandleChange }) => {
         placeholder="color"
         value={gear.color}
       />
-      <label htmlFor="price">Price</label>
+      <label htmlFor="price">
+        Price<span>*</span>
+      </label>
       <input
         id="price"
         className="form-control"
@@ -126,8 +159,11 @@ const KnifeForm = ({ gear, cbHandleChange }) => {
         name="price"
         placeholder="price"
         value={gear.price}
+        required
       />
-      <label htmlFor="titleImg">TitleImg</label>
+      <label htmlFor="titleImg">
+        TitleImg<span>*</span>
+      </label>
       <input
         id="titleImg"
         className="form-control"
@@ -136,6 +172,7 @@ const KnifeForm = ({ gear, cbHandleChange }) => {
         name="titleImg"
         placeholder="titleImg"
         value={gear.titleImg}
+        required
       />
       <label htmlFor="extraImg1">ExtraImg1</label>
       <input

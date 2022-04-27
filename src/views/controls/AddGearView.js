@@ -30,7 +30,9 @@ const AddGearView = () => {
     extraImg3: "",
   });
   const navigate = useNavigate();
+  // function handleCheckboxChange(event){
 
+  // }
   function handleChange(event) {
     if (event.target.name === "preciseType") {
       setNewGear({
@@ -91,10 +93,14 @@ const AddGearView = () => {
           </option>
           <option value="Knife">Knife</option>
           <option value="Holster">Holster</option>
+          <option value="Optics">Optics</option>
+          <option value="Bag">Bag</option>
+          <option value={`EarAndEyeProtection`}>{`Ear&Eye Protection`}</option>
           <option value="Vest">Vest</option>
+          <option value="PlateCarrier">Plate Carrier</option>
         </select>
         <GearForm gear={newGear} cbHandleChange={handleChange} />
-        <button className="btn btn-primary">Submit</button>
+        <button className="btn edit-btn">Submit</button>
       </form>
     </div>
   );

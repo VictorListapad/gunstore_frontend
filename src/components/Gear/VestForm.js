@@ -1,4 +1,4 @@
-const HolsterForm = ({ gear, cbHandleChange }) => {
+const VestForm = ({ gear, cbHandleChange }) => {
   return (
     <>
       <label htmlFor="model">
@@ -98,6 +98,18 @@ const HolsterForm = ({ gear, cbHandleChange }) => {
         placeholder="features"
         value={gear.features}
       />
+      <label htmlFor="availableSizes">
+        Available Sizes (Separate by Comma)
+      </label>
+      <input
+        id="availableSizes"
+        className="form-control"
+        type="text"
+        onChange={cbHandleChange}
+        name="availableSizes"
+        placeholder="availableSizes"
+        value={gear.availableSizes}
+      />
       <label htmlFor="material">Material</label>
       <input
         id="material"
@@ -178,4 +190,4 @@ const HolsterForm = ({ gear, cbHandleChange }) => {
   );
 };
 
-export default HolsterForm;
+export default VestForm;

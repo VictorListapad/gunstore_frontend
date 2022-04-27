@@ -16,7 +16,7 @@ const GearView = () => {
       getGear();
     } else {
       const filtered = gear.filter((item) =>
-        item.name.toLowerCase().includes(modelStr.toLowerCase())
+        item.model.toLowerCase().includes(modelStr.toLowerCase())
       );
       setGear(filtered.reverse());
     }

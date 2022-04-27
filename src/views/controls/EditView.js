@@ -8,6 +8,7 @@ import {
   deleteAmmunition,
   getAllAmmunition,
 } from "../../services/ammunitionService";
+import { deleteGear, getAllGear } from "../../services/gearService";
 const EditView = () => {
   const [inventory, setInventory] = useState([]);
   const [value, setValue] = useState("all");
@@ -15,8 +16,14 @@ const EditView = () => {
     const rifles = await getAllRifles();
     const pistols = await getAllPistols();
     const ammunition = await getAllAmmunition();
+    const gear = await getAllGear();
     setInventory(
-      [...ammunition.data, ...rifles.data, ...pistols.data].reverse()
+      [
+        ...gear.data,
+        ...ammunition.data,
+        ...rifles.data,
+        ...pistols.data,
+      ].reverse()
     );
   };
   const handleDelete = async (itemType, id) => {
@@ -36,6 +43,11 @@ const EditView = () => {
         return;
       }
       await deleteAmmunition(id);
+    } else {
+      if (!choice) {
+        return;
+      }
+      await deleteGear(id);
     }
     setValue(`all`);
     getAllProducts();
@@ -63,6 +75,10 @@ const EditView = () => {
     const res = await getAllRifles();
     setInventory(res.data.reverse());
   };
+  const getGear = async () => {
+    const res = await getAllGear();
+    setInventory(res.data.reverse());
+  };
   const radioCheckHandler = (event) => {
     setValue(event.target.value);
   };
@@ -73,6 +89,8 @@ const EditView = () => {
       getPistols();
     } else if (value === "ammunition") {
       getAmmunition();
+    } else if (value === "gear") {
+      getGear();
     } else {
       getAllProducts();
     }
@@ -121,6 +139,16 @@ const EditView = () => {
           id="ammunition"
           onChange={radioCheckHandler}
           checked={value === "ammunition"}
+        />
+        <label htmlFor="gear">Gear</label>
+        <input
+          className="radio-btn"
+          type="radio"
+          name="type"
+          value="gear"
+          id="gear"
+          onChange={radioCheckHandler}
+          checked={value === "gear"}
         />
       </div>
       <table className="mt-3 edit-table">
