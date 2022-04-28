@@ -11,6 +11,7 @@ const AddRifleView = () => {
     manufacturer: "",
     shortDescription: "",
     fullDescription: "",
+    features: "",
     availability: "",
     sku: "",
     caliber: "",

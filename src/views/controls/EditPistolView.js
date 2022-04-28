@@ -12,6 +12,7 @@ const EditPistolView = () => {
     manufacturer: "",
     shortDescription: "",
     fullDescription: "",
+    features: "",
     availability: "",
     sku: "",
     caliber: "",

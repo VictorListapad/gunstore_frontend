@@ -51,8 +51,14 @@
   padding: 1rem 0 2rem 0;
   width: 100%;
 }
+
+.firearm-features {
+  width: 90%;
+  margin: 0 auto;
+}
+
 .firearm-details p {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   padding-top: 2rem;
   padding-bottom: 2rem;

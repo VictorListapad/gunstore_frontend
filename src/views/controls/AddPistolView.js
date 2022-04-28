@@ -10,6 +10,7 @@ const AddPistolView = () => {
     manufacturer: "",
     shortDescription: "",
     fullDescription: "",
+    features: "",
     availability: "",
     sku: "",
     caliber: "",
