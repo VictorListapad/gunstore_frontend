@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;600&family=Roboto+Condensed:wght@300;400&display=swap");
+.sign-form-container {
+  font-family: "Oswald", sans-serif;
+  width: 100%;
+  text-align: center;
+}
+.sign-form input {
+  margin: 10px 0;
+}
+
+.sign-form {
+  width: 80% !important;
+  margin: 1rem auto;
+  text-align: center;
+}
+input:focus {
+  outline: none !important;
+  border: 1px solid #eeaf00 !important;
+  box-shadow: 0 0 5px #eeaf00 !important;
+}
+.sign-form .btn {
+  background: #000;
+  color: #fff;
+  transition: all 0.2s linear;
+}
+.sign-form .btn:hover {
+  background: #eeaf00;
+  color: #000;
+}

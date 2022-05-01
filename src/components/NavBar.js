@@ -50,10 +50,10 @@ export const NavBar = () => {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Link to="/signup" className="custom-nav-link">
+            <Link to="/signUp" className="custom-nav-link">
               Sign Up
             </Link>
-            <Link to="/login" className="custom-nav-link">
+            <Link to="/signIn" className="custom-nav-link">
               Log In
             </Link>
           </Nav>
