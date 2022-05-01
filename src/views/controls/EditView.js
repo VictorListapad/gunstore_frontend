@@ -100,7 +100,9 @@ const EditView = () => {
       <h1>Inventory</h1>
       <Search search={handleSearch} />
       <div className="radio-btns-container">
-        <label htmlFor="all">All</label>
+        <label className="edit-label" htmlFor="all">
+          All
+        </label>
         <input
           className="radio-btn"
           type="radio"
@@ -110,7 +112,9 @@ const EditView = () => {
           onChange={radioCheckHandler}
           checked={value === "all"}
         />
-        <label htmlFor="pistol">Pistols</label>
+        <label className="edit-label" htmlFor="pistol">
+          Pistols
+        </label>
         <input
           className="radio-btn"
           type="radio"
@@ -120,7 +124,9 @@ const EditView = () => {
           onChange={radioCheckHandler}
           checked={value === "pistol"}
         />
-        <label htmlFor="rifle">Rifles</label>
+        <label className="edit-label" htmlFor="rifle">
+          Rifles
+        </label>
         <input
           className="radio-btn"
           type="radio"
@@ -130,7 +136,9 @@ const EditView = () => {
           onChange={radioCheckHandler}
           checked={value === "rifle"}
         />
-        <label htmlFor="ammunition">Ammunition</label>
+        <label className="edit-label" htmlFor="ammunition">
+          Ammunition
+        </label>
         <input
           className="radio-btn"
           type="radio"
@@ -140,7 +148,9 @@ const EditView = () => {
           onChange={radioCheckHandler}
           checked={value === "ammunition"}
         />
-        <label htmlFor="gear">Gear</label>
+        <label className="edit-label" htmlFor="gear">
+          Gear
+        </label>
         <input
           className="radio-btn"
           type="radio"

@@ -27,7 +27,22 @@
   font-size: 1.1rem;
   padding: 1rem 1rem;
 }
-
+span {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  margin-right: 0.5rem;
+}
+.sign-btn {
+  background: #fff !important;
+  border: none !important;
+  color: #000 !important;
+  transition: all 0.2s linear;
+}
+.sign-btn:hover {
+  background: #eeaf00 !important;
+  color: #fff !important;
+}
 .show {
   background: #000 !important;
 }

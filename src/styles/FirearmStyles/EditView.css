@@ -6,14 +6,12 @@
   font-family: "Oswald", sans-serif;
 }
 
-label {
-  margin: 0 0.3rem 0 1rem;
-}
-
 .radio-btn {
   accent-color: #000;
 }
-
+.edit-label {
+  margin: 0 0.3rem 0 0.3rem;
+}
 input:focus {
   outline: none !important;
   border: 1px solid #eeaf00 !important;

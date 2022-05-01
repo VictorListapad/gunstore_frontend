@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import { signinUser } from "../../services/authService";
+import { signinUser, signupUser } from "../../services/authService";
 import "../../styles/SignForm.css";
-const SignInView = () => {
+const SignUpView = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState({
+    name: "",
+    username: "",
     email: "",
     password: "",
   });
@@ -14,23 +16,43 @@ const SignInView = () => {
       [event.target.name]: event.target.value,
     });
   };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const res = await signinUser(user);
+    const res = await signupUser(user);
+    signinUser(user);
     setUser({
+      name: "",
+      username: "",
       email: "",
       password: "",
     });
     navigate("/");
-    window.location.reload();
   };
-
   return (
     <div className="sign-form-container">
-      <form onSubmit={handleSubmit} className="sign-form form-control">
-        <h1>Sign In</h1>
-        <label htmlFor="sign-email">Email</label>
+      <form className="sign-form form-control" onSubmit={handleSubmit}>
+        <h1>Sign Up</h1>
+        <label htmlFor="sign-name">Name</label>
+        <input
+          type="text"
+          className="form-control"
+          id="sign-name"
+          name="name"
+          placeholder="name"
+          onChange={handleChange}
+          required
+        />
+        <label htmlFor="sign-username">Username</label>
+        <input
+          type="text"
+          className="form-control"
+          id="sign-username"
+          name="username"
+          placeholder="username"
+          onChange={handleChange}
+          required
+        />
+        <label htmlFor="sign-email">email</label>
         <input
           type="email"
           className="form-control"
@@ -40,7 +62,7 @@ const SignInView = () => {
           onChange={handleChange}
           required
         />
-        <label htmlFor="sign-password">Password</label>
+        <label htmlFor="sign-password">password</label>
         <input
           type="password"
           className="form-control"
@@ -51,11 +73,11 @@ const SignInView = () => {
           required
         />
         <button className="btn" type="submit">
-          Sign In
+          Sign Up
         </button>
       </form>
     </div>
   );
 };
 
-export default SignInView;
+export default SignUpView;

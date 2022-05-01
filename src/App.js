@@ -1,9 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import ModeratorRoute from "./components/ModeratorRoute";
 import { NavBar } from "./components/NavBar";
 import AmmunitionDetailsView from "./views/Ammunition/AmmunitionDetailsView";
 import AmmunitionView from "./views/Ammunition/AmmunitionView";
 import SignInView from "./views/Auth/SignInView";
+import SignUpView from "./views/Auth/SignUpView";
 import AddAmmunitionView from "./views/controls/AddAmmunitionView";
 import AddGearView from "./views/controls/AddGearView";
 import AddPistolView from "./views/controls/AddPistolView";
@@ -31,20 +33,23 @@ function App() {
         <Route path="/rifles" element={<RiflesView />} />
         <Route path="/pistol/:id" element={<PistolDetailsView />} />
         <Route path="/rifle/:id" element={<RifleDetailsView />} />
-        <Route path="/addPistol" element={<AddPistolView />} />
-        <Route path="/addRifle" element={<AddRifleView />} />
-        <Route path="/edit" element={<EditView />} />
-        <Route path="/pistolEdit/:id" element={<EditPistolView />} />
-        <Route path="/rifleEdit/:id" element={<EditRifleView />} />
+        <Route element={<ModeratorRoute />}>
+          <Route path="/edit" element={<EditView />} />
+          <Route path="/addPistol" element={<AddPistolView />} />
+          <Route path="/pistolEdit/:id" element={<EditPistolView />} />
+          <Route path="/addRifle" element={<AddRifleView />} />
+          <Route path="/rifleEdit/:id" element={<EditRifleView />} />
+          <Route path="/addAmmo" element={<AddAmmunitionView />} />
+          <Route path="/ammunitionEdit/:id" element={<EditAmmunitionView />} />
+          <Route path="/gearEdit/:id" element={<EditGearView />} />
+          <Route path="/addGear" element={<AddGearView />} />
+        </Route>
         <Route path="/ammunition" element={<AmmunitionView />} />
         <Route path="/ammo/:id" element={<AmmunitionDetailsView />} />
-        <Route path="/ammunitionEdit/:id" element={<EditAmmunitionView />} />
-        <Route path="/addAmmo" element={<AddAmmunitionView />} />
         <Route path="/gear" element={<GearView />} />
-        <Route path="/addGear" element={<AddGearView />} />
         <Route path="/item/:id" element={<GearDetailsView />} />
-        <Route path="/gearEdit/:id" element={<EditGearView />} />
         <Route path="/signIn" element={<SignInView />} />
+        <Route path="/signUp" element={<SignUpView />} />
       </Routes>
     </BrowserRouter>
   );

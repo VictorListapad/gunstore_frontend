@@ -1,7 +1,9 @@
-import { Navbar, NavDropdown, Nav, Container } from "react-bootstrap";
+import { Navbar, NavDropdown, Nav, Container, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { isAuthenticated, signoutUser } from "../services/authService";
 import "../styles/NavBar.css";
 export const NavBar = () => {
+  const user = isAuthenticated();
   return (
     <Navbar id="navbar" collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
@@ -31,31 +33,44 @@ export const NavBar = () => {
             <Link to="/about" className="custom-nav-link">
               About
             </Link>
-            <NavDropdown title="Controls" id="collasible-nav-dropdown">
-              <NavDropdown.Item>
-                <Link to="/addPistol">Add Pistol</Link>
-              </NavDropdown.Item>
-              <NavDropdown.Item>
-                <Link to="/addRifle">Add Rifle</Link>
-              </NavDropdown.Item>
-              <NavDropdown.Item>
-                <Link to="/addAmmo">Add Ammo</Link>
-              </NavDropdown.Item>
-              <NavDropdown.Item>
-                <Link to="/addGear">Add Gear</Link>
-              </NavDropdown.Item>
-              <NavDropdown.Item>
-                <Link to="/edit">Edit</Link>
-              </NavDropdown.Item>
-            </NavDropdown>
+            {user.role === "MODERATOR" || user.role === "ADMIN" ? (
+              <NavDropdown title="Controls" id="collasible-nav-dropdown">
+                <NavDropdown.Item>
+                  <Link to="/addPistol">Add Pistol</Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <Link to="/addRifle">Add Rifle</Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <Link to="/addAmmo">Add Ammo</Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <Link to="/addGear">Add Gear</Link>
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  <Link to="/edit">Edit</Link>
+                </NavDropdown.Item>
+              </NavDropdown>
+            ) : null}
           </Nav>
           <Nav>
-            <Link to="/signUp" className="custom-nav-link">
-              Sign Up
-            </Link>
-            <Link to="/signIn" className="custom-nav-link">
-              Log In
-            </Link>
+            {user ? (
+              <>
+                <span>{user.name}</span>
+                <Button onClick={signoutUser} className="sign-btn">
+                  Sign Out
+                </Button>
+              </>
+            ) : (
+              <>
+                <Link to="/signUp" className="custom-nav-link">
+                  Sign Up
+                </Link>
+                <Link to="/signIn" className="custom-nav-link">
+                  Log In
+                </Link>
+              </>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>

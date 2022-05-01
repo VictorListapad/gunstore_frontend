@@ -8,12 +8,15 @@ export const signinUser = async (userObj) => {
   const { user, token } = res.data;
   const { _id, email, ...userStored } = user;
   localStorage.setItem(jwtString, JSON.stringify({ user: userStored, token }));
-  toast.success(`Welcome, ${user.name} !`, {
+  return res;
+};
+export const signupUser = async (userObj) => {
+  const res = await axios.post(`${apiUrl}/auth/signup`, userObj);
+  toast.success(`Successfully Registered!`, {
     theme: "dark",
   });
   return res;
 };
-
 export const isAuthenticated = () => {
   if (typeof window === "undefined") {
     return false;
