@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import AdminRoute from "./components/AdminRoute";
 import ModeratorRoute from "./components/ModeratorRoute";
 import { NavBar } from "./components/NavBar";
 import AmmunitionDetailsView from "./views/Ammunition/AmmunitionDetailsView";
@@ -14,7 +15,9 @@ import EditAmmunitionView from "./views/controls/EditAmmunitionView";
 import EditGearView from "./views/controls/EditGearView";
 import EditPistolView from "./views/controls/EditPistolView";
 import EditRifleView from "./views/controls/EditRifleView";
+import EditUsersView from "./views/controls/EditUsersView";
 import EditView from "./views/controls/EditView";
+import UserUpdateView from "./views/controls/UserUpdateView";
 import GearDetailsView from "./views/Gear/GearDetailsView";
 import GearView from "./views/Gear/GearView";
 import HomeView from "./views/HomeView";
@@ -43,6 +46,10 @@ function App() {
           <Route path="/ammunitionEdit/:id" element={<EditAmmunitionView />} />
           <Route path="/gearEdit/:id" element={<EditGearView />} />
           <Route path="/addGear" element={<AddGearView />} />
+        </Route>
+        <Route element={<AdminRoute />}>
+          <Route path="/editUsers" element={<EditUsersView />} />
+          <Route path="/userEdit/:id" element={<UserUpdateView />} />
         </Route>
         <Route path="/ammunition" element={<AmmunitionView />} />
         <Route path="/ammo/:id" element={<AmmunitionDetailsView />} />

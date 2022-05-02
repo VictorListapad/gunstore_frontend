@@ -48,8 +48,13 @@ export const NavBar = () => {
                   <Link to="/addGear">Add Gear</Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                  <Link to="/edit">Edit</Link>
+                  <Link to="/edit">Edit Inventory</Link>
                 </NavDropdown.Item>
+                {user.role === "ADMIN" ? (
+                  <NavDropdown.Item>
+                    <Link to="/editUsers">Edit Users</Link>
+                  </NavDropdown.Item>
+                ) : null}
               </NavDropdown>
             ) : null}
           </Nav>

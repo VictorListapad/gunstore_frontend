@@ -19,7 +19,7 @@ const SignUpView = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const res = await signupUser(user);
-    signinUser(user);
+    // signinUser(user);
     setUser({
       name: "",
       username: "",
