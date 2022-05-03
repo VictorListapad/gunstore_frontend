@@ -11,3 +11,20 @@
 .comment-card:hover {
   border: 0.5px solid #000;
 }
+
+.comment-btns {
+  display: flex;
+  align-items: center;
+  height: 2.5rem;
+}
+
+.comment-delete-btn {
+  margin: 0 0.2rem 0 0 !important;
+  width: 4rem !important;
+  height: 100%;
+}
+.comment-edit-btn {
+  display: inline-block !important;
+  width: 4rem !important;
+  height: 100%;
+}

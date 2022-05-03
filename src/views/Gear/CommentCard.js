@@ -1,4 +1,5 @@
 import { isAuthenticated } from "../../services/authService";
+import { Link } from "react-router-dom";
 import "../../styles/CommentCard.css";
 const CommentCard = ({ commentObj, handleDelete }) => {
   const userLoggedIn = () => {
@@ -23,13 +24,23 @@ const CommentCard = ({ commentObj, handleDelete }) => {
         <h6>{commentObj.date.split("T")[0].split("-").reverse().join("-")}</h6>
       </div>
       <div className="text">
-        <p>{commentObj.text}</p>
+        <p style={{ whiteSpace: "pre" }}>{commentObj.text}</p>
       </div>
       <div className="comment-controls">
         {(user && user._id === commentObj.author._id) ||
         (user && user.role === "ADMIN") ||
         (user && user.role === "MODERATOR") ? (
-          <button onClick={handleDelete}>Delete</button>
+          <div className="comment-btns">
+            <button className="btn comment-delete-btn" onClick={handleDelete}>
+              Delete
+            </button>
+            <Link
+              className="btn btn-primary comment-edit-btn"
+              to={`/editGearComment/${commentObj._id}`}
+            >
+              Edit
+            </Link>
+          </div>
         ) : null}
       </div>
     </div>

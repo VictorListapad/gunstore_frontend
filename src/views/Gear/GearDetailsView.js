@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import FirearmCarousel from "../../components/FirearmCarousel";
+import Preloader from "../../components/Preloader";
 import {
   createGearComment,
   deleteGearComment,
@@ -12,6 +13,7 @@ import CommentCard from "./CommentCard";
 
 const GearDetailsView = () => {
   const { id } = useParams();
+  const [loading, setLoading] = useState(true);
   const [gear, setGear] = useState({});
   const [gearComments, setGearComments] = useState([]);
   const [newComment, setNewComment] = useState({
@@ -25,6 +27,7 @@ const GearDetailsView = () => {
   const getGearComments = async () => {
     const res = await getAllCommentsForGear(id);
     setGearComments(res.data);
+    setLoading(false);
   };
 
   const handleChange = (event) => {
@@ -58,57 +61,63 @@ const GearDetailsView = () => {
   }, []);
 
   return (
-    <div className="firearm-view-container">
-      <div className="firearm-intro-container">
-        <div className="firearm-details-carousel">
-          <FirearmCarousel firearmObj={gear} />
-        </div>
-        <div className="firearm-name">
-          <h1 className="firearm-title">{gear.model}</h1>
-          <div className="firearm-divider"></div>
-          <p className="firearm-description">{gear.shortDescription}</p>
-        </div>
-      </div>
-      <div className="firearm-details">
-        <h3>Details</h3>
-        <p>{gear.fullDescription}</p>
-        {gear.features ? (
-          <div className="firearm-features">
-            <h3>Features</h3>
-            <ul>
-              {gear.features.split(",").map((feature) => (
-                <li>{feature}</li>
-              ))}
-            </ul>
+    <>
+      {loading ? (
+        <Preloader />
+      ) : (
+        <div className="firearm-view-container">
+          <div className="firearm-intro-container">
+            <div className="firearm-details-carousel">
+              <FirearmCarousel firearmObj={gear} />
+            </div>
+            <div className="firearm-name">
+              <h1 className="firearm-title">{gear.model}</h1>
+              <div className="firearm-divider"></div>
+              <p className="firearm-description">{gear.shortDescription}</p>
+            </div>
           </div>
-        ) : null}
-      </div>
-      <div className="comment-section">
-        <h1>Comments and Questions</h1>
-        <form onSubmit={handleSubmit}>
-          <textarea
-            rows={8}
-            type="text"
-            name="text"
-            placeholder="leave a comment"
-            value={newComment.text}
-            onChange={handleChange}
-          />
-          <button type="submit" className="btn">
-            Submit
-          </button>
-        </form>
-        <div className="comments">
-          {gearComments.map((comment) => (
-            <CommentCard
-              key={comment._id}
-              commentObj={comment}
-              handleDelete={() => handleDelete(comment)}
-            />
-          ))}
+          <div className="firearm-details">
+            <h3>Details</h3>
+            <p>{gear.fullDescription}</p>
+            {gear.features ? (
+              <div className="firearm-features">
+                <h3>Features</h3>
+                <ul>
+                  {gear.features.split(",").map((feature) => (
+                    <li>{feature}</li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+          </div>
+          <div className="comment-section">
+            <h1>Comments and Questions</h1>
+            <form onSubmit={handleSubmit}>
+              <textarea
+                rows={8}
+                type="text"
+                name="text"
+                placeholder="leave a comment"
+                value={newComment.text}
+                onChange={handleChange}
+              />
+              <button type="submit" className="btn">
+                Submit
+              </button>
+            </form>
+            <div className="comments">
+              {gearComments.map((comment) => (
+                <CommentCard
+                  key={comment._id}
+                  commentObj={comment}
+                  handleDelete={() => handleDelete(comment)}
+                />
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 
