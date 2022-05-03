@@ -1,0 +1,13 @@
+.comment-card {
+  border: 0.5px solid #eee;
+  width: 98%;
+  transition: all 0.2s linear;
+  padding: 0.5rem;
+}
+.name-and-date {
+  display: flex;
+  justify-content: space-between;
+}
+.comment-card:hover {
+  border: 0.5px solid #000;
+}

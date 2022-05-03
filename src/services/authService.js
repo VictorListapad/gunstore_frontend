@@ -7,7 +7,7 @@ const jwtString = `smokeandbarrels`;
 export const signinUser = async (userObj) => {
   const res = await axios.post(`${apiUrl}/auth/signin`, userObj);
   const { user, token } = res.data;
-  const { _id, email, ...userStored } = user;
+  const { email, ...userStored } = user;
   localStorage.setItem(jwtString, JSON.stringify({ user: userStored, token }));
   return res;
 };

@@ -18,6 +18,7 @@ const SignInView = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const res = await signinUser(user);
+    console.log(user._id);
     setUser({
       email: "",
       password: "",

@@ -1,19 +1,54 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import FirearmCarousel from "../../components/FirearmCarousel";
+import {
+  createGearComment,
+  getAllCommentsForGear,
+} from "../../services/gearCommentService";
 import { getGearById } from "../../services/gearService";
 import "../../styles/FirearmStyles/PistolDetailsView.css";
+import CommentCard from "./CommentCard";
 
 const GearDetailsView = () => {
   const { id } = useParams();
   const [gear, setGear] = useState({});
+  const [gearComments, setGearComments] = useState([]);
+  const [newComment, setNewComment] = useState({
+    text: "",
+    productId: "",
+  });
   const getGear = async () => {
     const res = await getGearById(id);
     setGear(res.data);
   };
+  const getGearComments = async () => {
+    const res = await getAllCommentsForGear(id);
+    setGearComments(res.data);
+  };
+
+  const handleChange = (event) => {
+    setNewComment({
+      ...newComment,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    await createGearComment(newComment);
+    setNewComment({
+      text: "",
+      productId: "",
+    });
+  };
   useEffect(() => {
     getGear();
-  });
+    getGearComments();
+    setNewComment({
+      ...newComment,
+      productId: id,
+    });
+  }, [gearComments]);
 
   return (
     <div className="firearm-view-container">
@@ -41,9 +76,27 @@ const GearDetailsView = () => {
           </div>
         ) : null}
       </div>
-      {/* <div className="firearm-spec-container">
-        <PistolSpecTable pistol={pistol} />
-      </div> */}
+      <div className="comment-section">
+        <h1>Comments and Questions</h1>
+        <form onSubmit={handleSubmit}>
+          <textarea
+            rows={8}
+            type="text"
+            name="text"
+            placeholder="leave a comment"
+            value={newComment.text}
+            onChange={handleChange}
+          />
+          <button type="submit" className="btn">
+            Submit
+          </button>
+        </form>
+        <div className="comments">
+          {gearComments.map((comment) => (
+            <CommentCard key={comment._id} commentObj={comment} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

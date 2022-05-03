@@ -98,6 +98,39 @@ h3 {
 .odd-row {
   background: #fff;
 }
+.comment-section {
+  width: 100%;
+}
+
+.comment-section > form {
+  text-align: center;
+  padding: 0 0 2rem 0;
+}
+.comment-section > h1 {
+  text-align: center;
+  padding: 0 0 1rem 0;
+}
+.comment-section textarea {
+  margin: 0 0 1rem 0;
+  width: 98%;
+  resize: none;
+  border: 0.5px solid #000;
+}
+.comment-section button {
+  margin: 0 0 1rem 0;
+  border: none;
+  background: #000;
+  color: #fff;
+  transition: all 0.2s linear;
+}
+.comment-section button:hover {
+  background: #eeaf00;
+  color: #000;
+}
+
+.comments > div {
+  margin: 0 auto;
+}
 
 @media screen and (min-width: 375px) {
   .firearm-intro-container {

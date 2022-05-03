@@ -15,7 +15,7 @@ const AmmunitionDetailsView = () => {
 
   useEffect(() => {
     getAmmo();
-  }, [ammo]);
+  }, []);
 
   return (
     <div className="firearm-view-container">
