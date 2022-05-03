@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import FirearmCarousel from "../../components/FirearmCarousel";
 import {
   createGearComment,
+  deleteGearComment,
   getAllCommentsForGear,
 } from "../../services/gearCommentService";
 import { getGearById } from "../../services/gearService";
@@ -36,10 +37,16 @@ const GearDetailsView = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     await createGearComment(newComment);
+    getGearComments();
     setNewComment({
       text: "",
-      productId: "",
+      productId: id,
     });
+  };
+
+  const handleDelete = async (comment) => {
+    await deleteGearComment(comment);
+    getGearComments();
   };
   useEffect(() => {
     getGear();
@@ -48,7 +55,7 @@ const GearDetailsView = () => {
       ...newComment,
       productId: id,
     });
-  }, [gearComments]);
+  }, []);
 
   return (
     <div className="firearm-view-container">
@@ -93,7 +100,11 @@ const GearDetailsView = () => {
         </form>
         <div className="comments">
           {gearComments.map((comment) => (
-            <CommentCard key={comment._id} commentObj={comment} />
+            <CommentCard
+              key={comment._id}
+              commentObj={comment}
+              handleDelete={() => handleDelete(comment)}
+            />
           ))}
         </div>
       </div>

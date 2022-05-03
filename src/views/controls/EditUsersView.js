@@ -15,10 +15,12 @@ const EditUsersView = () => {
       return;
     }
     await deleteUser(id);
+    getUsers();
   };
   useEffect(() => {
     getUsers();
-  }, [users]);
+    console.log(`loop`);
+  }, []);
 
   return (
     <div className="inventory-edit-container">

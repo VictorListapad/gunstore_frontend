@@ -1,5 +1,14 @@
+import { isAuthenticated } from "../../services/authService";
 import "../../styles/CommentCard.css";
-const CommentCard = ({ commentObj }) => {
+const CommentCard = ({ commentObj, handleDelete }) => {
+  const userLoggedIn = () => {
+    const user = JSON.parse(localStorage.getItem(`smokeandbarrels`));
+    if (user === null) {
+      return false;
+    }
+    return user;
+  };
+  const { user } = userLoggedIn();
   return (
     <div className="comment-card">
       <div className="name-and-date">
@@ -15,6 +24,13 @@ const CommentCard = ({ commentObj }) => {
       </div>
       <div className="text">
         <p>{commentObj.text}</p>
+      </div>
+      <div className="comment-controls">
+        {(user && user._id === commentObj.author._id) ||
+        (user && user.role === "ADMIN") ||
+        (user && user.role === "MODERATOR") ? (
+          <button onClick={handleDelete}>Delete</button>
+        ) : null}
       </div>
     </div>
   );
