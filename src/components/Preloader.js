@@ -1,6 +1,11 @@
-import { Spinner } from "react-bootstrap";
+import "../styles/Preloader.css";
+import PreloaderImg from "../images/preloader-img.png";
 const Preloader = () => {
-  return <Spinner animation="border" variant="warning" />;
+  return (
+    <div className="preloader-container">
+      <img src={PreloaderImg} alt="preloader-img" />
+    </div>
+  );
 };
 
 export default Preloader;

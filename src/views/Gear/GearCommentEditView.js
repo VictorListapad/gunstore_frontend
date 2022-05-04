@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
+import Preloader from "../../components/Preloader";
 import {
   getGearCommentById,
   updateGearComment,
@@ -11,9 +12,11 @@ const GearCommentEditView = () => {
   const [comment, setComment] = useState({
     text: "",
   });
+  const [loading, setLoading] = useState(true);
   const getComment = async () => {
     const res = await getGearCommentById(id);
     setComment(res.data);
+    setLoading(false);
   };
 
   const handleChange = (event) => {
@@ -36,21 +39,27 @@ const GearCommentEditView = () => {
     getComment();
   }, []);
   return (
-    <div className="firearm-form">
-      <form onSubmit={handleSubmit}>
-        <h1>Edit Comment</h1>
-        <textarea
-          className="form-control"
-          type="text"
-          name="text"
-          value={comment.text}
-          onChange={handleChange}
-        />
-        <button type="submit" className="btn btn-primary">
-          Submit Changes
-        </button>
-      </form>
-    </div>
+    <>
+      {loading ? (
+        <Preloader />
+      ) : (
+        <div className="firearm-form">
+          <form onSubmit={handleSubmit}>
+            <h1>Edit Comment</h1>
+            <textarea
+              className="form-control"
+              type="text"
+              name="text"
+              value={comment.text}
+              onChange={handleChange}
+            />
+            <button type="submit" className="btn btn-primary">
+              Submit Changes
+            </button>
+          </form>
+        </div>
+      )}
+    </>
   );
 };
 

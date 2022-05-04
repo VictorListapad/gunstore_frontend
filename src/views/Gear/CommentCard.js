@@ -35,7 +35,7 @@ const CommentCard = ({ commentObj, handleDelete }) => {
               Delete
             </button>
             <Link
-              className="btn btn-primary comment-edit-btn"
+              className="btn comment-edit-btn"
               to={`/editGearComment/${commentObj._id}`}
             >
               Edit

@@ -61,7 +61,7 @@ export const NavBar = () => {
           <Nav>
             {user ? (
               <>
-                <span>{user.name}</span>
+                <span className="user-name">{user.name}</span>
                 <Button onClick={signoutUser} className="sign-btn">
                   Sign Out
                 </Button>

@@ -22,9 +22,21 @@
   margin: 0 0.2rem 0 0 !important;
   width: 4rem !important;
   height: 100%;
+  transition: all 0.2s linear !important;
+}
+.comment-delete-btn:hover {
+  color: #000;
+  background: #d81616 !important;
 }
 .comment-edit-btn {
   display: inline-block !important;
   width: 4rem !important;
   height: 100%;
+  background: #000 !important;
+  color: #fff !important;
+  transition: all 0.2s linear !important;
+}
+.comment-edit-btn:hover {
+  background: #eeaf00 !important;
+  color: #000 !important;
 }

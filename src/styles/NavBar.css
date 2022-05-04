@@ -27,7 +27,7 @@
   font-size: 1.1rem;
   padding: 1rem 1rem;
 }
-span {
+.user-name {
   color: #fff;
   display: flex;
   align-items: center;

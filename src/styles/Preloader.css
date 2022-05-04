@@ -1,0 +1,21 @@
+.preloader-container {
+  width: 100%;
+  height: calc(100vh - 72px);
+  display: flex;
+  align-items: center !important;
+  justify-content: center;
+}
+.preloader-container img {
+  height: 72px;
+  width: 72px;
+  animation: cylinderRotation 3s infinite;
+}
+
+@keyframes cylinderRotation {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
