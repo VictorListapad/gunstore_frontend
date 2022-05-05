@@ -11,7 +11,7 @@ import {
 import { getReviewsForGear } from "../../services/gearReviewService";
 import { getGearById } from "../../services/gearService";
 import "../../styles/FirearmStyles/PistolDetailsView.css";
-import CommentCard from "./CommentCard";
+import CommentCard from "../../components/CommentCard";
 
 const GearDetailsView = () => {
   const { id } = useParams();

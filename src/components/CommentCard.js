@@ -1,15 +1,16 @@
-import { isAuthenticated } from "../../services/authService";
+import { isAuthenticated } from "../services/authService";
 import { Link } from "react-router-dom";
-import "../../styles/CommentCard.css";
+import "../styles/CommentCard.css";
 const CommentCard = ({ commentObj, handleDelete }) => {
-  const userLoggedIn = () => {
-    const user = JSON.parse(localStorage.getItem(`smokeandbarrels`));
-    if (user === null) {
-      return false;
-    }
-    return user;
-  };
-  const { user } = userLoggedIn();
+  // const userLoggedIn = () => {
+  //   const user = isAuthenticated();
+  //   console.log(user);
+  //   if (user === null) {
+  //     return false;
+  //   }
+  //   return user;
+  // };
+  const user = isAuthenticated();
   return (
     <div className="comment-card">
       <div className="name-and-date">

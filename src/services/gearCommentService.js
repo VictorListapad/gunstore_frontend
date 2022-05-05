@@ -54,13 +54,13 @@ export const updateGearComment = async (id, comment) => {
       });
       return res;
     } catch (error) {
-      toast.error(`You have no permit to delete this comment `, {
+      toast.error(`You have no permit to update this comment `, {
         theme: "dark",
       });
       return;
     }
   } else {
-    toast.error(`You have no permit to delete this comment `, {
+    toast.error(`You have no permit to update this comment `, {
       theme: "dark",
     });
     return;
@@ -81,6 +81,9 @@ export const deleteGearComment = async (comment) => {
         theme: "dark",
       });
     } catch (error) {
+      toast.error(`You have no permit to delete this comment `, {
+        theme: "dark",
+      });
       return;
     }
   } else {
