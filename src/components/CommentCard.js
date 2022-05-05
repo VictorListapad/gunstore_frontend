@@ -2,14 +2,6 @@ import { isAuthenticated } from "../services/authService";
 import { Link } from "react-router-dom";
 import "../styles/CommentCard.css";
 const CommentCard = ({ commentObj, handleDelete }) => {
-  // const userLoggedIn = () => {
-  //   const user = isAuthenticated();
-  //   console.log(user);
-  //   if (user === null) {
-  //     return false;
-  //   }
-  //   return user;
-  // };
   const user = isAuthenticated();
   return (
     <div className="comment-card">
@@ -25,7 +17,13 @@ const CommentCard = ({ commentObj, handleDelete }) => {
         <h6>{commentObj.date.split("T")[0].split("-").reverse().join("-")}</h6>
       </div>
       <div className="text">
-        <p style={{ whiteSpace: "pre" }}>{commentObj.text}</p>
+        <p
+          style={{
+            whiteSpace: "pre-wrap",
+          }}
+        >
+          {commentObj.text}
+        </p>
       </div>
       <div className="comment-controls">
         {(user && user._id === commentObj.author._id) ||

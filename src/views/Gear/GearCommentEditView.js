@@ -52,6 +52,7 @@ const GearCommentEditView = () => {
               name="text"
               value={comment.text}
               onChange={handleChange}
+              required
             />
             <button type="submit" className="btn btn-primary">
               Submit Changes

@@ -4,15 +4,17 @@ import ReviewBox from "../../components/ReviewBox";
 import { getReviewsForGear } from "../../services/gearReviewService";
 import { getGearById } from "../../services/gearService";
 import { Link } from "react-router-dom";
+import Preloader from "../../components/Preloader";
 
 const GearReviewsView = () => {
   const { id } = useParams();
   const [gear, setGear] = useState({});
   const [reviews, setReviews] = useState([]);
-
+  const [loading, setLoading] = useState(true);
   const getGear = async () => {
     const res = await getGearById(id);
     setGear(res.data);
+    setLoading(false);
   };
 
   const getGearReviews = async () => {
@@ -26,13 +28,19 @@ const GearReviewsView = () => {
   }, []);
 
   return (
-    <div className="reviews-container">
-      <h1 className="review-page-title">{gear.model} Reviews</h1>
-      <Link to={`/writeGearReview/${id}`}>Write a review</Link>
-      {reviews.map((review) => (
-        <ReviewBox key={review._id} review={review} />
-      ))}
-    </div>
+    <>
+      {loading ? (
+        <Preloader />
+      ) : (
+        <div className="reviews-container">
+          <h1 className="review-page-title">{gear.model} Reviews</h1>
+          <Link to={`/writeGearReview/${id}`}>Write a review</Link>
+          {reviews.map((review) => (
+            <ReviewBox key={review._id} review={review} />
+          ))}
+        </div>
+      )}
+    </>
   );
 };
 

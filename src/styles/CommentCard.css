@@ -12,6 +12,10 @@
   border: 0.5px solid #000;
 }
 
+.text {
+  width: 100%;
+}
+
 .comment-btns {
   display: flex;
   align-items: center;
