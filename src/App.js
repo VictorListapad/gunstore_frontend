@@ -18,8 +18,10 @@ import EditRifleView from "./views/controls/EditRifleView";
 import EditUsersView from "./views/controls/EditUsersView";
 import EditView from "./views/controls/EditView";
 import UserUpdateView from "./views/controls/UserUpdateView";
+import AddGearReviewView from "./views/Gear/AddGearReviewView";
 import GearCommentEditView from "./views/Gear/GearCommentEditView";
 import GearDetailsView from "./views/Gear/GearDetailsView";
+import GearReviewsView from "./views/Gear/GearReviewsView";
 import GearView from "./views/Gear/GearView";
 import HomeView from "./views/HomeView";
 import PistolDetailsView from "./views/Pistols/PistolDetailsView";
@@ -59,6 +61,8 @@ function App() {
         <Route path="/signIn" element={<SignInView />} />
         <Route path="/signUp" element={<SignUpView />} />
         <Route path="/editGearComment/:id" element={<GearCommentEditView />} />
+        <Route path="/gearItemReviews/:id" element={<GearReviewsView />} />
+        <Route path="/writeGearReview/:id" element={<AddGearReviewView />} />
       </Routes>
     </BrowserRouter>
   );

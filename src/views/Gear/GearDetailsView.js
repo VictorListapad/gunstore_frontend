@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 import FirearmCarousel from "../../components/FirearmCarousel";
 import Preloader from "../../components/Preloader";
 import {
@@ -7,6 +8,7 @@ import {
   deleteGearComment,
   getAllCommentsForGear,
 } from "../../services/gearCommentService";
+import { getReviewsForGear } from "../../services/gearReviewService";
 import { getGearById } from "../../services/gearService";
 import "../../styles/FirearmStyles/PistolDetailsView.css";
 import CommentCard from "./CommentCard";
@@ -16,6 +18,7 @@ const GearDetailsView = () => {
   const [loading, setLoading] = useState(true);
   const [gear, setGear] = useState({});
   const [gearComments, setGearComments] = useState([]);
+  const [reviews, setReviews] = useState([]);
   const [newComment, setNewComment] = useState({
     text: "",
     productId: "",
@@ -29,7 +32,10 @@ const GearDetailsView = () => {
     setGearComments(res.data);
     setLoading(false);
   };
-
+  const getGearReviews = async () => {
+    const res = await getReviewsForGear(id);
+    setReviews(res.data);
+  };
   const handleChange = (event) => {
     setNewComment({
       ...newComment,
@@ -58,6 +64,7 @@ const GearDetailsView = () => {
       ...newComment,
       productId: id,
     });
+    getGearReviews();
   }, []);
 
   return (
@@ -72,6 +79,17 @@ const GearDetailsView = () => {
             </div>
             <div className="firearm-name">
               <h1 className="firearm-title">{gear.model}</h1>
+              {!reviews ? (
+                <Link to={`/gearItemReviews/${id}`}>No Reviews Yet</Link>
+              ) : (
+                <Link id="temp" to={`/gearItemReviews/${id}`}>
+                  {(
+                    reviews.reduce((acc, cur) => acc + cur.grade, 0) /
+                    reviews.length
+                  ).toFixed(1)}
+                </Link>
+              )}
+
               <div className="firearm-divider"></div>
               <p className="firearm-description">{gear.shortDescription}</p>
             </div>
