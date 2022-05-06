@@ -1,0 +1,27 @@
+.review-form-container {
+  width: 100vw;
+}
+
+.add-review-form {
+  width: 90%;
+  margin: 1rem auto auto auto;
+  text-align: center;
+}
+
+.add-review-form textarea,
+.add-review-form select {
+  margin: 10px 0;
+}
+
+.review-submit-btn {
+  margin: 0 auto;
+  border: none;
+  background: #000 !important;
+  color: #fff !important;
+  transition: all 0.2s linear;
+}
+
+.review-submit-btn:hover {
+  background: #eeaf00 !important;
+  color: #000 !important;
+}

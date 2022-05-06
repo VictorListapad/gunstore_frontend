@@ -36,6 +36,7 @@ const GearDetailsView = () => {
     const res = await getReviewsForGear(id);
     setReviews(res.data);
   };
+
   const handleChange = (event) => {
     setNewComment({
       ...newComment,
@@ -79,12 +80,16 @@ const GearDetailsView = () => {
             </div>
             <div className="firearm-name">
               <h1 className="firearm-title">{gear.model}</h1>
-              {!reviews ? (
-                <Link to={`/gearItemReviews/${id}`}>No Reviews Yet</Link>
+              {!reviews.length ? (
+                <Link
+                  to={`/gearItemReviews/${id}`}
+                  className="btn btn-primary go-to-reviews-btn"
+                >
+                  No Reviews Yet
+                </Link>
               ) : (
                 <Link
-                  className="btn btn-primary"
-                  id="temp"
+                  className="btn btn-primary go-to-reviews-btn"
                   to={`/gearItemReviews/${id}`}
                 >
                   {(
@@ -123,6 +128,7 @@ const GearDetailsView = () => {
                 placeholder="leave a comment"
                 value={newComment.text}
                 onChange={handleChange}
+                required
               />
               <button type="submit" className="btn">
                 Submit

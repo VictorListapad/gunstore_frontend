@@ -16,6 +16,7 @@ const GearReviewsView = () => {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
   const user = isAuthenticated();
+  const found = findIfReviewExists();
   const getGear = async () => {
     const res = await getGearById(id);
     setGear(res.data);
@@ -28,9 +29,19 @@ const GearReviewsView = () => {
   };
 
   const handleDelete = async (review) => {
+    const choice = window.confirm(
+      `Are you sure you want to delete this review?`
+    );
+    if (!choice) {
+      return;
+    }
     await deleteGearReview(review);
     getGearReviews();
   };
+
+  function findIfReviewExists() {
+    return reviews.find((review) => review.author._id === user._id);
+  }
 
   useEffect(() => {
     getGear();
@@ -45,14 +56,16 @@ const GearReviewsView = () => {
         <div className="reviews-container">
           <div className="model-and-link">
             <h1 className="review-page-title">{gear.model} Reviews</h1>
-            {user ? (
+            {found ? (
+              <h5 style={{ margin: "2rem" }}>
+                You have already reviewed this product
+              </h5>
+            ) : user ? (
               <Link className="reviews-link btn" to={`/writeGearReview/${id}`}>
                 Write a review
               </Link>
             ) : (
-              <h5 style={{ margin: "2rem" }}>
-                You need to be logged in to write reviews
-              </h5>
+              <h5>You need to be logged in to write reviews</h5>
             )}
           </div>
           {reviews.map((review) => (

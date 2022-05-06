@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import { createGearReview } from "../../services/gearReviewService";
-
+import "../../styles/AddReviewView.css";
 const AddGearReviewView = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -27,7 +27,8 @@ const AddGearReviewView = () => {
 
   return (
     <div className="review-form-container">
-      <form className="form-control" onSubmit={handleSubmit}>
+      <form className="form-control add-review-form" onSubmit={handleSubmit}>
+        <h1>Review</h1>
         <textarea
           type="text"
           name="reviewText"
@@ -36,6 +37,8 @@ const AddGearReviewView = () => {
           onChange={handleChange}
           value={review.reviewText}
           rows={8}
+          placeholder="please leave your feedback here"
+          required
         />
         <select
           type="number"
@@ -44,6 +47,7 @@ const AddGearReviewView = () => {
           className="form-control"
           onChange={handleChange}
           value={review.grade}
+          required
         >
           <option value={0} disabled>
             Rate this product
@@ -54,7 +58,7 @@ const AddGearReviewView = () => {
           <option value={4}>4</option>
           <option value={5}>5</option>
         </select>
-        <button className="btn" type="submit">
+        <button className="btn review-submit-btn" type="submit">
           Submit
         </button>
       </form>
