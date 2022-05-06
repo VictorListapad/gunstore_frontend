@@ -1,16 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
-import { createGearReview } from "../../services/gearReviewService";
+import {
+  getGearReviewById,
+  updateGearReview,
+} from "../../services/gearReviewService";
 
-const AddGearReviewView = () => {
-  const { id } = useParams();
+const EditGearReviewView = () => {
   const navigate = useNavigate();
+  const { id } = useParams();
   const [review, setReview] = useState({
-    author: "",
     reviewText: "",
-    grade: 0,
-    productId: id,
+    grade: "",
   });
+
+  const getGearReview = async () => {
+    const res = await getGearReviewById(id);
+    setReview(res.data);
+  };
 
   const handleChange = (event) => {
     setReview({
@@ -21,12 +27,17 @@ const AddGearReviewView = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    await createGearReview(review);
-    navigate(`/gearItemReviews/${id}`);
+    await updateGearReview(review);
+    navigate(`/gearItemReviews/${review.productId._id}`);
   };
 
+  useEffect(() => {
+    getGearReview();
+  }, []);
+
   return (
-    <div className="review-form-container">
+    <div className="review-edit-container">
+      <h1>Edit Review</h1>
       <form className="form-control" onSubmit={handleSubmit}>
         <textarea
           type="text"
@@ -62,4 +73,4 @@ const AddGearReviewView = () => {
   );
 };
 
-export default AddGearReviewView;
+export default EditGearReviewView;

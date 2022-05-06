@@ -82,11 +82,16 @@ const GearDetailsView = () => {
               {!reviews ? (
                 <Link to={`/gearItemReviews/${id}`}>No Reviews Yet</Link>
               ) : (
-                <Link id="temp" to={`/gearItemReviews/${id}`}>
+                <Link
+                  className="btn btn-primary"
+                  id="temp"
+                  to={`/gearItemReviews/${id}`}
+                >
                   {(
                     reviews.reduce((acc, cur) => acc + cur.grade, 0) /
                     reviews.length
                   ).toFixed(1)}
+                  {""}/ 5 - ( {reviews.length} Reviews )
                 </Link>
               )}
 

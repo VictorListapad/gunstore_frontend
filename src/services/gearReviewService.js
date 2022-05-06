@@ -8,11 +8,12 @@ export const getReviewsForGear = async (id) => {
 };
 
 export const createGearReview = async (review) => {
-  const { user } = JSON.parse(localStorage.getItem(`smokeandbarrels`));
-  review.author = user._id;
   try {
+    const { user } = JSON.parse(localStorage.getItem(`smokeandbarrels`));
+    review.author = user._id;
+    review.date = new Date().toLocaleDateString();
     const res = await axios.post(`${apiUrl}/gearReviews/gearReview`, review);
-    toast.success(`Review added`, {
+    toast.success(`Thank you for your review`, {
       theme: "dark",
     });
     return res;
@@ -29,12 +30,12 @@ export const getGearReviewById = async (id) => {
   return res;
 };
 
-export const updateGearReview = async (id, review) => {
+export const updateGearReview = async (review) => {
   const { user } = JSON.parse(localStorage.getItem(`smokeandbarrels`));
-  if (user._id === review.author._id) {
+  if (user && user._id === review.author._id) {
     try {
       const res = await axios.put(
-        `${apiUrl}/gearReviews/gearReview/${id}`,
+        `${apiUrl}/gearReviews/gearReview/${review._id}`,
         review
       );
       toast.success(`Review Updated`, {

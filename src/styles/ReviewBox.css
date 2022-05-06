@@ -1,0 +1,77 @@
+.reviews-container {
+  width: 100vw;
+}
+.model-and-link {
+  text-align: center;
+  padding: 1rem 0 0 1rem;
+}
+
+.reviews-link {
+  display: inline-block;
+  margin: 1rem !important;
+  background: #000 !important;
+  color: #fff !important;
+}
+.reviews-link:hover {
+  background: #eeaf00 !important;
+  color: #000 !important;
+}
+
+.review-box {
+  border: 0.5px solid #eee;
+  transition: all 0.2s linear;
+  padding: 0.5rem;
+}
+.review-box:hover {
+  border: 0.5px solid #000;
+}
+
+.name-and-grade {
+  display: flex;
+  justify-content: space-between;
+}
+
+p {
+  margin-top: 0.5rem !important;
+  word-break: pre-wrap;
+}
+.review-divider {
+  margin: 0 auto;
+  height: 1px;
+}
+.review-box:hover .review-divider {
+  animation: showDivider 0.2s linear forwards;
+  background: #eeaf00;
+}
+
+.delete-review-btn {
+  background: #000 !important;
+  color: #fff !important;
+  width: 4rem;
+  transition: all 0.2s linear;
+}
+.delete-review-btn:hover {
+  background: #d81616 !important;
+  color: #000 !important;
+}
+.edit-review-btn {
+  background: #000 !important;
+  color: #fff !important;
+  width: 4rem;
+  transition: all 0.2s linear;
+  margin-left: 0.2rem;
+}
+
+.edit-review-btn:hover {
+  background: #eeaf00 !important;
+  color: #000 !important;
+}
+
+@keyframes showDivider {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
