@@ -9,7 +9,7 @@
   background: #eeaf00;
 }
 .firearm-intro-container {
-  height: 35rem;
+  min-height: 35rem;
   width: 100%;
 }
 .firearm-carousel-item {
@@ -46,7 +46,9 @@
   width: 100%;
   background: #eee;
 }
-
+ul {
+  list-style-type: square;
+}
 .firearm-details {
   padding: 1rem 0 2rem 0;
   width: 100%;
@@ -99,6 +101,7 @@ h3 {
   background: #fff;
 }
 .comment-section {
+  padding-top: 1rem;
   width: 100%;
 }
 
@@ -143,13 +146,22 @@ h3 {
   color: #fff !important;
 }
 
-@media screen and (min-width: 375px) {
+@media screen and (min-width: 280px) {
   .firearm-intro-container {
-    height: 37rem;
+    min-height: 37rem;
     width: 100%;
   }
   .firearm-carousel-item {
-    height: 17rem;
+    height: 20rem;
+  }
+}
+@media screen and (min-width: 375px) {
+  .firearm-intro-container {
+    min-height: 37rem;
+    width: 100%;
+  }
+  .firearm-carousel-item {
+    height: 27rem;
   }
 }
 @media screen and (min-width: 540px) {

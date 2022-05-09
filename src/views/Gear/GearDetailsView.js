@@ -12,6 +12,10 @@ import { getReviewsForGear } from "../../services/gearReviewService";
 import { getGearById } from "../../services/gearService";
 import "../../styles/FirearmStyles/PistolDetailsView.css";
 import CommentCard from "../../components/CommentCard";
+import KnifeSpecTable from "../../components/Gear/KnifeSpecTable";
+import VestSpecTable from "../../components/Gear/VestSpecTable";
+import HolsterSpecTable from "../../components/Gear/HolsterSpecTable";
+import OpticsSpecTable from "../../components/Gear/OpticsSpecTable";
 
 const GearDetailsView = () => {
   const { id } = useParams();
@@ -117,9 +121,31 @@ const GearDetailsView = () => {
                 </ul>
               </div>
             ) : null}
+            {gear.systemIncludes ? (
+              <div className="firearm-features">
+                <h3>System Includes</h3>
+                <ul>
+                  {gear.systemIncludes.split(",").map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+          </div>
+          <div className="firearm-spec-container">
+            {gear.preciseType === "Knife" ? (
+              <KnifeSpecTable knifeObj={gear} />
+            ) : gear.preciseType === "Vest" ||
+              gear.preciseType === "PlateCarrier" ? (
+              <VestSpecTable vestObj={gear} />
+            ) : gear.preciseType === "Holster" ? (
+              <HolsterSpecTable holsterObj={gear} />
+            ) : gear.preciseType === "Optics" ? (
+              <OpticsSpecTable opticsObj={gear} />
+            ) : null}
           </div>
           <div className="comment-section">
-            <h1>Comments and Questions</h1>
+            <h3>Comments and Questions</h3>
             <form onSubmit={handleSubmit}>
               <textarea
                 rows={8}

@@ -14,6 +14,7 @@ const AddGearView = () => {
     availableSizes: "",
     shortDescription: "",
     fullDescription: "",
+    systemIncludes: "",
     availability: "",
     overallLength: "",
     overallWidth: "",

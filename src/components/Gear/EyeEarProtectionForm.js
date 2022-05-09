@@ -98,6 +98,19 @@ const EyeEarProtectionForm = ({ gear, cbHandleChange }) => {
         placeholder="features"
         value={gear.features}
       />
+      <label htmlFor="systemIncludes">
+        Design Fetures (Separate with Comma)
+      </label>
+      <textarea
+        rows={5}
+        id="systemIncludes"
+        className="form-control"
+        type="text"
+        onChange={cbHandleChange}
+        name={"systemIncludes"}
+        placeholder="systemIncludes"
+        value={gear.systemIncludes}
+      />
       <label htmlFor="material">Material</label>
       <input
         id="material"

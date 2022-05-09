@@ -98,7 +98,9 @@ const HolsterForm = ({ gear, cbHandleChange }) => {
         placeholder="features"
         value={gear.features}
       />
-      <label htmlFor="material">Material</label>
+      <label htmlFor="material">
+        Material<span>*</span>
+      </label>
       <input
         id="material"
         className="form-control"
@@ -108,7 +110,9 @@ const HolsterForm = ({ gear, cbHandleChange }) => {
         placeholder="material"
         value={gear.material}
       />
-      <label htmlFor="color">Color</label>
+      <label htmlFor="color">
+        Color<span>*</span>
+      </label>
       <input
         id="color"
         className="form-control"

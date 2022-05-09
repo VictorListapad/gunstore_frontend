@@ -98,25 +98,18 @@ const BagForm = ({ gear, cbHandleChange }) => {
         placeholder="features"
         value={gear.features}
       />
-      <label htmlFor="material">Material</label>
-      <input
-        id="material"
+      <label htmlFor="systemIncludes">
+        System Includes (Separate with Comma)
+      </label>
+      <textarea
+        rows={5}
+        id="systemIncludes"
         className="form-control"
         type="text"
         onChange={cbHandleChange}
-        name="material"
-        placeholder="material"
-        value={gear.material}
-      />
-      <label htmlFor="color">Color</label>
-      <input
-        id="color"
-        className="form-control"
-        type="text"
-        onChange={cbHandleChange}
-        name="color"
-        placeholder="color"
-        value={gear.color}
+        name={"systemIncludes"}
+        placeholder="systemIncludes"
+        value={gear.systemIncludes}
       />
       <label htmlFor="price">
         Price<span>*</span>

@@ -87,6 +87,17 @@ const VestForm = ({ gear, cbHandleChange }) => {
         value={gear.fullDescription}
         required
       />
+      <label htmlFor="protectionLevel">Protection Level</label>
+      <textarea
+        rows={5}
+        id="protectionLevel"
+        className="form-control"
+        type="text"
+        onChange={cbHandleChange}
+        name="protectionLevel"
+        placeholder="protectionLevel"
+        value={gear.protectionLevel}
+      />
       <label htmlFor="features">Features (Separate with Comma)</label>
       <textarea
         rows={5}
@@ -98,10 +109,25 @@ const VestForm = ({ gear, cbHandleChange }) => {
         placeholder="features"
         value={gear.features}
       />
+      <label htmlFor="systemIncludes">
+        System Includes (Separate by Comma)
+      </label>
+      <textarea
+        rows={5}
+        id="systemIncludes"
+        className="form-control"
+        type="text"
+        onChange={cbHandleChange}
+        name="systemIncludes"
+        placeholder="systemIncludes"
+        value={gear.systemIncludes}
+      />
       <label htmlFor="availableSizes">
         Available Sizes (Separate by Comma)
+        <span>*</span>
       </label>
-      <input
+      <textarea
+        rows={5}
         id="availableSizes"
         className="form-control"
         type="text"
@@ -109,6 +135,7 @@ const VestForm = ({ gear, cbHandleChange }) => {
         name="availableSizes"
         placeholder="availableSizes"
         value={gear.availableSizes}
+        required
       />
       <label htmlFor="material">Material</label>
       <input

@@ -7,7 +7,10 @@ const GearCard = ({ gearObj }) => {
       <div className="firearm-card-img-container">
         <img src={gearObj.titleImg} alt="" />
       </div>
-      <div className="firearm-card-info-container">
+      <div
+        className="firearm-card-info-container"
+        style={{ textAlign: "center" }}
+      >
         <h5>{gearObj.model}</h5>
         <p>{gearObj.shortDescription}</p>
         <h5>{`$${gearObj.price}`}</h5>
