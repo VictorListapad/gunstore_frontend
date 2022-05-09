@@ -208,12 +208,27 @@ h3 {
     height: 40rem;
   }
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1920px) {
+  .firearm-intro-container {
+    height: 50rem;
+  }
+  .firearm-details-carousel {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .firearm-name {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 2560px) {
   .firearm-intro-container {
     height: 55rem;
   }
 }
-@media screen and (min-width: 2160px) {
+@media screen and (min-width: 3840px) {
   .firearm-intro-container {
     height: 75rem;
   }

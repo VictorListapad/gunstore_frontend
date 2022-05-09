@@ -9,10 +9,14 @@ const PistolCard = ({ pistolObj }) => {
       </div>
       <div className="firearm-card-info-container">
         <h5>{pistolObj.model}</h5>
-        <p>{pistolObj.shortDescription}</p>
-        <h5>{`$${pistolObj.price}`}</h5>
+        <p>
+          {pistolObj.shortDescription.length > 70
+            ? `${pistolObj.shortDescription.slice(0, 70)}...`
+            : pistolObj.shortDescription}
+        </p>
+        <h5 className="price">{`$${pistolObj.price}`}</h5>
         <Link className="firearm-btn" to={`/pistol/${pistolObj._id}`}>
-          SEE MORE
+          SEE DETAILS
         </Link>
       </div>
     </div>

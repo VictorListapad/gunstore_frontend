@@ -1,6 +1,9 @@
 .firearm-window {
   width: 100vw;
 }
+label {
+  margin: 0 0.1rem 0 0.6rem;
+}
 
 .view-header {
   width: 100%;
@@ -92,18 +95,37 @@
 @media screen and (min-width: 1024px) {
   .firearm-card {
     width: 33.3vw;
-    max-height: 50rem;
+    min-height: 40rem;
   }
   .firearm-card-img-container {
-    height: 25rem;
+    height: 20rem;
   }
   .firearm-card-info-container {
-    height: 25rem;
+    height: 20rem;
+  }
+  .firearm-card-info-container > h5 {
+    font-size: 1.5rem !important;
+  }
+  .firearm-card-info-container > p {
+    font-size: 1.2rem !important;
   }
 }
 @media screen and (min-width: 1920px) {
   .firearm-card {
     width: 25vw;
+  }
+  .firearm-card-info-container > h5 {
+    height: 8rem;
+    font-size: 2rem;
+  }
+
+  .firearm-card-info-container > p {
+    height: 8rem;
+    font-size: 1.5rem;
+  }
+
+  .price {
+    height: 4rem !important;
   }
 }
 @media screen and (min-width: 2560px) {
@@ -113,12 +135,26 @@
 }
 @media screen and (min-width: 3840px) {
   .firearm-card {
-    height: 60rem;
+    min-height: 60rem;
   }
   .firearm-card-img-container {
     height: 30rem;
   }
   .firearm-card-info-container {
     height: 30rem;
+  }
+
+  .firearm-card-info-container > h5 {
+    height: 10rem;
+    font-size: 2rem;
+  }
+
+  .firearm-card-info-container > p {
+    height: 10rem;
+    font-size: 1.5rem;
+  }
+
+  .price {
+    height: 5rem !important;
   }
 }

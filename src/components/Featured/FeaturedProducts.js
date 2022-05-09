@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import { getAllPistols } from "../../services/pistolService";
 import FeaturedProductCard from "./FeaturedProductCard";
 import "../../styles/FeaturedProduct.css";
+import PistolCard from "../Pistols/PistolCard";
 
 const FeaturedProducts = () => {
   const [products, setProducts] = useState([]);
   const getPistols = async () => {
     const res = await getAllPistols();
-    setProducts(res.data.splice(0, 6));
+    setProducts(res.data.splice(0, 6).reverse());
   };
   useEffect(() => {
     getPistols();

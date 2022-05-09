@@ -1,18 +1,28 @@
 import { Link } from "react-router-dom";
 const FeaturedProductCard = ({ productObj }) => {
   return (
-    <div className="featured-card">
+    <div className="firearm-card">
       {productObj.newProduct ? <div className="newItem">New</div> : null}
-      <div className="featured-card-img-container">
+      <div className="firearm-card-img-container">
         <img src={productObj.titleImg} alt="" />
       </div>
-      <div className="featured-card-info-container">
+      <div className="firearm-card-info-container">
         <h5>{productObj.model}</h5>
-        <p>{productObj.description}</p>
+        <p>
+          {productObj.shortDescription.length > 70
+            ? `${productObj.shortDescription.slice(0, 70)}...`
+            : productObj.shortDescription}
+        </p>
         <h5>{`$${productObj.price}`}</h5>
-        <Link className="featured-btn" to={`/pistol/${productObj._id}`}>
-          SEE MORE
-        </Link>
+        {productObj.type === "pistol" ? (
+          <Link className="firearm-btn" to={`/pistol/${productObj._id}`}>
+            SEE MORE
+          </Link>
+        ) : (
+          <Link className="firearm-btn" to={`/rifle/${productObj._id}`}>
+            SEE MORE
+          </Link>
+        )}
       </div>
     </div>
   );

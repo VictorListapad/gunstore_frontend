@@ -50,3 +50,66 @@
 .dropdown-item {
   background: #000 !important;
 }
+
+@media screen and (min-width: 1920px) {
+  #navbar {
+    padding: 2rem 0;
+  }
+
+  #navbar .container {
+    min-width: 60% !important;
+  }
+  .navbar-brand > a {
+    font-size: 1.5rem !important;
+    padding: 1rem;
+  }
+  a {
+    font-size: 1.2rem !important;
+  }
+
+  #navbar span {
+    font-size: 1.2rem;
+  }
+  #navbar button {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 2560px) {
+  #navbar {
+    padding: 2.2rem 0;
+  }
+  .navbar-brand > a {
+    font-size: 2.2rem !important;
+  }
+  a {
+    font-size: 1.8rem !important;
+  }
+
+  #navbar span {
+    font-size: 1.4rem;
+  }
+  #navbar button {
+    font-size: 1.4rem;
+  }
+}
+@media screen and (min-width: 3840px) {
+  #navbar {
+    padding: 3rem 0;
+  }
+  #navbar .container {
+    min-width: 80% !important;
+  }
+  .navbar-brand > a {
+    font-size: 3rem !important;
+  }
+  a {
+    font-size: 2.8rem !important;
+  }
+
+  #navbar span {
+    font-size: 2rem;
+  }
+  #navbar button {
+    font-size: 2rem;
+  }
+}
