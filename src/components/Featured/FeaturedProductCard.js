@@ -4,7 +4,7 @@ const FeaturedProductCard = ({ productObj }) => {
     <div className="firearm-card">
       {productObj.newProduct ? <div className="newItem">New</div> : null}
       <div className="firearm-card-img-container">
-        <img src={productObj.titleImg} alt="" />
+        <img src={productObj.titleImg} alt={`${productObj.model}`} />
       </div>
       <div className="firearm-card-info-container">
         <h5>{productObj.model}</h5>

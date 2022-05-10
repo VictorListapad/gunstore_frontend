@@ -3,7 +3,7 @@
 }
 
 .add-review-form {
-  width: 90%;
+  width: 90% !important;
   margin: 1rem auto auto auto;
   text-align: center;
 }
@@ -24,4 +24,57 @@
 .review-submit-btn:hover {
   background: #eeaf00 !important;
   color: #000 !important;
+}
+
+.review-label {
+  margin: 0;
+}
+
+@media screen and (min-width: 1920px) {
+  .add-review-form h1 {
+    font-size: 2rem;
+  }
+  .review-label {
+    font-size: 1.5rem;
+  }
+
+  .add-review-form textarea,
+  .add-review-form select {
+    font-size: 1.5rem;
+  }
+  .review-submit-btn {
+    font-size: 1.5rem !important;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .add-review-form h1 {
+    font-size: 3rem;
+  }
+  .review-label {
+    font-size: 2rem;
+  }
+
+  .add-review-form textarea,
+  .add-review-form select {
+    font-size: 2rem;
+  }
+  .review-submit-btn {
+    font-size: 2rem !important;
+  }
+}
+@media screen and (min-width: 3840px) {
+  .add-review-form h1 {
+    font-size: 4rem;
+  }
+  .review-label {
+    font-size: 3rem;
+  }
+
+  .add-review-form textarea,
+  .add-review-form select {
+    font-size: 3rem;
+  }
+  .review-submit-btn {
+    font-size: 3rem !important;
+  }
 }

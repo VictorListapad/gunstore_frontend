@@ -37,8 +37,11 @@ const EditGearReviewView = () => {
 
   return (
     <div className="review-edit-container">
-      <h1>Edit Review</h1>
-      <form className="form-control" onSubmit={handleSubmit}>
+      <form className="form-control add-review-form" onSubmit={handleSubmit}>
+        <h1>Edit Review</h1>
+        <label className="review-label" htmlFor="reviewText">
+          Review
+        </label>
         <textarea
           type="text"
           name="reviewText"
@@ -48,6 +51,9 @@ const EditGearReviewView = () => {
           value={review.reviewText}
           rows={8}
         />
+        <label className="review-label" htmlFor="grade">
+          Score
+        </label>
         <select
           type="number"
           name="grade"
@@ -65,7 +71,7 @@ const EditGearReviewView = () => {
           <option value={4}>4</option>
           <option value={5}>5</option>
         </select>
-        <button className="btn" type="submit">
+        <button className="btn review-submit-btn" type="submit">
           Submit
         </button>
       </form>

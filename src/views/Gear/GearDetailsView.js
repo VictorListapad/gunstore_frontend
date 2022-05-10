@@ -115,8 +115,8 @@ const GearDetailsView = () => {
               <div className="firearm-features">
                 <h3>Features</h3>
                 <ul>
-                  {gear.features.split(",").map((feature) => (
-                    <li>{feature}</li>
+                  {gear.features.split(",").map((feature, index) => (
+                    <li key={index}>{feature}</li>
                   ))}
                 </ul>
               </div>
@@ -125,8 +125,8 @@ const GearDetailsView = () => {
               <div className="firearm-features">
                 <h3>System Includes</h3>
                 <ul>
-                  {gear.systemIncludes.split(",").map((item) => (
-                    <li>{item}</li>
+                  {gear.systemIncludes.split(",").map((item, index) => (
+                    <li key={index}>{item}</li>
                   ))}
                 </ul>
               </div>

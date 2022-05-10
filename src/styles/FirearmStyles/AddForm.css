@@ -16,11 +16,63 @@
   text-align: center;
 }
 
-label span {
+.firearm-form label span {
   color: red;
   font-size: 1.2rem;
 }
 
-textarea {
+.firearm-form textarea {
   resize: none !important;
+}
+
+@media screen and (min-width: 1920px) {
+  .firearm-form h1 {
+    font-size: 3rem !important;
+  }
+  .firearm-form label {
+    font-size: 1.75rem;
+  }
+  .firearm-form label span {
+    font-size: 1.75rem;
+  }
+
+  .firearm-form input,
+  .firearm-form textarea,
+  .firearm-form select {
+    font-size: 1.75rem;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .firearm-form h1 {
+    font-size: 3.5rem !important;
+  }
+  .firearm-form label {
+    font-size: 2.25rem;
+  }
+  .firearm-form label span {
+    font-size: 2.25rem;
+  }
+
+  .firearm-form input,
+  .firearm-form textarea,
+  .firearm-form select {
+    font-size: 2.25rem;
+  }
+}
+@media screen and (min-width: 3840px) {
+  .firearm-form h1 {
+    font-size: 4rem !important;
+  }
+  .firearm-form label {
+    font-size: 3rem;
+  }
+  .firearm-form label span {
+    font-size: 3rem;
+  }
+
+  .firearm-form input,
+  .firearm-form textarea,
+  .firearm-form select {
+    font-size: 3rem;
+  }
 }

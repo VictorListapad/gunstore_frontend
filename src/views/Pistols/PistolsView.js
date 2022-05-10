@@ -51,7 +51,9 @@ const PistolView = () => {
             <h1>Pistols</h1>
             <Search search={handleSearch} />
             <div className="radio-btns-container">
-              <label htmlFor="all">All</label>
+              <label htmlFor="all" className="edit-label">
+                All
+              </label>
               <input
                 className="radio-btn"
                 type="radio"
@@ -61,7 +63,9 @@ const PistolView = () => {
                 onChange={radioCheckHandler}
                 checked={value === "all"}
               />
-              <label htmlFor="9mm">9mm</label>
+              <label htmlFor="9mm" className="edit-label">
+                9mm
+              </label>
               <input
                 className="radio-btn"
                 type="radio"
@@ -71,7 +75,9 @@ const PistolView = () => {
                 onChange={radioCheckHandler}
                 checked={value === "9mm Luger"}
               />
-              <label htmlFor="45Auto">.45 Auto</label>
+              <label htmlFor="45Auto" className="edit-label">
+                .45 Auto
+              </label>
               <input
                 className="radio-btn"
                 type="radio"

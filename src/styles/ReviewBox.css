@@ -11,6 +11,7 @@
   margin: 1rem !important;
   background: #000 !important;
   color: #fff !important;
+  transition: all 0.2s linear;
 }
 .reviews-link:hover {
   background: #eeaf00 !important;
@@ -75,5 +76,80 @@ p {
   }
   to {
     width: 100%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .review-box p,
+  .review-box h6 {
+    font-size: 1.25rem;
+  }
+
+  .control-btns button,
+  .control-btns a {
+    font-size: 1.25rem !important;
+    width: 5rem;
+  }
+
+  .reviews-link {
+    font-size: 1.25rem !important;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .review-box p,
+  .review-box h6 {
+    font-size: 1.5rem;
+  }
+
+  .control-btns button,
+  .control-btns a {
+    font-size: 1.5rem !important;
+    width: 6rem;
+  }
+
+  .reviews-link {
+    font-size: 1.5rem !important;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .review-box p,
+  .review-box h6 {
+    font-size: 2rem;
+  }
+
+  .control-btns button,
+  .control-btns a {
+    font-size: 2rem !important;
+    width: 8rem;
+  }
+  .review-page-title {
+    font-size: 4rem;
+  }
+  .model-and-link h5 {
+    font-size: 3rem;
+  }
+  .reviews-link {
+    font-size: 2rem !important;
+  }
+}
+@media screen and (min-width: 3840px) {
+  .review-box p,
+  .review-box h6 {
+    font-size: 3rem;
+  }
+
+  .control-btns button,
+  .control-btns a {
+    font-size: 3rem !important;
+    width: 10rem;
+  }
+  .review-page-title {
+    font-size: 5rem;
+  }
+  .model-and-link h5 {
+    font-size: 4rem;
+  }
+  .reviews-link {
+    font-size: 3rem !important;
   }
 }

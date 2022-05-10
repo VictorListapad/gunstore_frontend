@@ -8,9 +8,12 @@
 
 .radio-btn {
   accent-color: #000;
+  display: inline-block;
+  vertical-align: middle;
 }
 .edit-label {
   margin: 0 0.3rem 0 0.3rem;
+  vertical-align: middle;
 }
 input:focus {
   outline: none !important;
@@ -136,5 +139,97 @@ select:focus {
   .edit-btn {
     width: 110.91px;
     font-size: 1.35rem !important;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .inventory-edit-container img {
+    width: 300px;
+  }
+  .inventory-edit-container tr {
+    font-size: 1.65rem;
+  }
+
+  .delete-btn {
+    width: 125.91px;
+    font-size: 1.55rem !important;
+  }
+  .edit-btn {
+    width: 125.91px;
+    font-size: 1.55rem !important;
+  }
+  .inventory-edit-container h1 {
+    font-size: 3rem;
+  }
+  .inventory-edit-container .search-bar input {
+    height: 4rem;
+    font-size: 2rem;
+  }
+  .edit-label {
+    margin: 0 0.5rem 0 0.5rem;
+    font-size: 1.75rem;
+  }
+  .radio-btn {
+    transform: scale(1.5);
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .inventory-edit-container tr {
+    font-size: 2.25rem;
+  }
+
+  .delete-btn {
+    width: 155.91px;
+    font-size: 2rem !important;
+  }
+  .edit-btn {
+    width: 155.91px;
+    font-size: 2rem !important;
+  }
+  .inventory-edit-container h1 {
+    font-size: 4rem;
+  }
+  .inventory-edit-container .search-bar input {
+    height: 4rem;
+    font-size: 2rem;
+  }
+  .edit-label {
+    margin: 0 0.75rem 0 0.75rem;
+    font-size: 2rem;
+  }
+  .radio-btn {
+    transform: scale(1.75);
+  }
+}
+
+@media screen and (min-width: 3840px) {
+  .inventory-edit-container img {
+    width: 500px;
+  }
+  .inventory-edit-container tr {
+    font-size: 3rem;
+  }
+
+  .delete-btn {
+    width: 245.91px;
+    font-size: 3rem !important;
+  }
+  .edit-btn {
+    width: 245.91px;
+    font-size: 3rem !important;
+  }
+  .inventory-edit-container h1 {
+    font-size: 5rem;
+  }
+  .inventory-edit-container .search-bar input {
+    height: 4rem;
+    font-size: 2rem;
+  }
+  .edit-label {
+    margin: 0 1rem 0 1rem;
+    font-size: 3rem;
+  }
+  .radio-btn {
+    transform: scale(2.5);
   }
 }

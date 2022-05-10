@@ -29,6 +29,9 @@ const AddGearReviewView = () => {
     <div className="review-form-container">
       <form className="form-control add-review-form" onSubmit={handleSubmit}>
         <h1>Review</h1>
+        <label className="review-label" htmlFor="reviewText">
+          Review
+        </label>
         <textarea
           type="text"
           name="reviewText"
@@ -40,6 +43,9 @@ const AddGearReviewView = () => {
           placeholder="please leave your feedback here"
           required
         />
+        <label className="review-label" htmlFor="grade">
+          Score
+        </label>
         <select
           type="number"
           name="grade"
