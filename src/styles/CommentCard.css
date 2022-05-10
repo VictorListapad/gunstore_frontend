@@ -26,7 +26,11 @@
   margin: 0 0.2rem 0 0 !important;
   width: 4rem !important;
   height: 100%;
+  font-size: 1rem !important;
   transition: all 0.2s linear !important;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
 }
 .comment-delete-btn:hover {
   color: #000;
@@ -35,12 +39,77 @@
 .comment-edit-btn {
   display: inline-block !important;
   width: 4rem !important;
+  font-size: 1rem !important;
   height: 100%;
   background: #000 !important;
   color: #fff !important;
   transition: all 0.2s linear !important;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
 }
 .comment-edit-btn:hover {
   background: #eeaf00 !important;
   color: #000 !important;
+}
+
+@media screen and (min-width: 1920px) {
+  .comment-btns {
+    height: 3.5rem;
+  }
+  .comment-edit-btn {
+    width: 6rem !important;
+    font-size: 1.75rem !important;
+  }
+  .comment-delete-btn {
+    width: 6rem !important;
+    font-size: 1.75rem !important;
+  }
+
+  .text {
+    font-size: 1.5rem;
+  }
+  .name-and-date h6 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .comment-btns {
+    height: 4.5rem;
+  }
+  .comment-edit-btn {
+    width: 7rem !important;
+    font-size: 2.25rem !important;
+  }
+  .comment-delete-btn {
+    width: 7rem !important;
+    font-size: 2.25rem !important;
+  }
+
+  .text {
+    font-size: 2rem;
+  }
+  .name-and-date h6 {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 3840px) {
+  .comment-btns {
+    height: 6rem;
+  }
+  .comment-edit-btn {
+    width: 9rem !important;
+    font-size: 2.75rem !important;
+  }
+  .comment-delete-btn {
+    width: 9rem !important;
+    font-size: 2.75rem !important;
+  }
+
+  .text {
+    font-size: 3rem;
+  }
+  .name-and-date h6 {
+    font-size: 3rem;
+  }
 }
