@@ -5,17 +5,61 @@ import "../../styles/FirearmStyles/PistolDetailsView.css";
 import FirearmCarousel from "../../components/FirearmCarousel";
 import PistolSpecTable from "../../components/Pistols/PistolSpecTable";
 import Preloader from "../../components/Preloader";
+import CommentCard from "../../components/CommentCard";
+import {
+  createPistolComment,
+  deletePistolComment,
+  getAllCommentsForPistol,
+} from "../../services/pistolCommentService";
 const PistolDetailsView = () => {
   const [pistol, setPistol] = useState({});
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
+  const [pistolComments, setPistolComments] = useState([]);
+  const [newComment, setNewComment] = useState({
+    text: "",
+    productId: "",
+  });
   const getPistol = async () => {
     const res = await getPistolById(id);
     setPistol(res.data);
+    // setLoading(false);
+  };
+
+  const getPistolComments = async () => {
+    const res = await getAllCommentsForPistol(id);
+    setPistolComments(res.data);
     setLoading(false);
+  };
+
+  const handleChange = (event) => {
+    setNewComment({
+      ...newComment,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleDelete = async (comment) => {
+    await deletePistolComment(comment);
+    getPistolComments();
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    await createPistolComment(newComment);
+    getPistolComments();
+    setNewComment({
+      text: "",
+      productId: id,
+    });
   };
   useEffect(() => {
     getPistol();
+    getPistolComments();
+    setNewComment({
+      text: "",
+      productId: id,
+    });
   }, []);
   return (
     <>
@@ -49,6 +93,32 @@ const PistolDetailsView = () => {
           </div>
           <div className="firearm-spec-container">
             <PistolSpecTable pistol={pistol} />
+          </div>
+          <div className="comment-section">
+            <h3>Comments and Questions</h3>
+            <form onSubmit={handleSubmit}>
+              <textarea
+                rows={8}
+                type="text"
+                name="text"
+                placeholder="leave a comment"
+                value={newComment.text}
+                onChange={handleChange}
+                required
+              />
+              <button type="submit" className="btn">
+                Submit
+              </button>
+            </form>
+            <div className="comments">
+              {pistolComments.map((comment) => (
+                <CommentCard
+                  key={comment._id}
+                  commentObj={comment}
+                  handleDelete={() => handleDelete(comment)}
+                />
+              ))}
+            </div>
           </div>
         </div>
       )}
