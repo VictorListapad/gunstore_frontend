@@ -5,6 +5,7 @@ import ModeratorRoute from "./components/ModeratorRoute";
 import { NavBar } from "./components/NavBar";
 import AmmunitionDetailsView from "./views/Ammunition/AmmunitionDetailsView";
 import AmmunitionView from "./views/Ammunition/AmmunitionView";
+import EditAmmunitionCommentView from "./views/Ammunition/EditAmmunitionCommentView";
 import SignInView from "./views/Auth/SignInView";
 import SignUpView from "./views/Auth/SignUpView";
 import AddAmmunitionView from "./views/controls/AddAmmunitionView";
@@ -25,8 +26,10 @@ import GearDetailsView from "./views/Gear/GearDetailsView";
 import GearReviewsView from "./views/Gear/GearReviewsView";
 import GearView from "./views/Gear/GearView";
 import HomeView from "./views/HomeView";
+import EditPistolCommentView from "./views/Pistols/EditPistolCommentView";
 import PistolDetailsView from "./views/Pistols/PistolDetailsView";
 import PistolView from "./views/Pistols/PistolsView";
+import EditRifleCommentView from "./views/Rifles/EditRifleCommentView";
 import RifleDetailsView from "./views/Rifles/RifleDetailsView";
 import RiflesView from "./views/Rifles/RiflesView";
 
@@ -66,6 +69,18 @@ function App() {
         <Route path="/gearItemReviews/:id" element={<GearReviewsView />} />
         <Route path="/writeGearReview/:id" element={<AddGearReviewView />} />
         <Route path="/editGearReview/:id" element={<EditGearReviewView />} />
+        <Route
+          path="/editPistolComment/:id"
+          element={<EditPistolCommentView />}
+        />
+        <Route
+          path="/editRifleComment/:id"
+          element={<EditRifleCommentView />}
+        />
+        <Route
+          path="/editAmmunitionComment/:id"
+          element={<EditAmmunitionCommentView />}
+        />
       </Routes>
     </BrowserRouter>
   );

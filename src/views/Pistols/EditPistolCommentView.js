@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import Preloader from "../../components/Preloader";
 import {
-  getGearCommentById,
-  updateGearComment,
-} from "../../services/gearCommentService";
+  getPistolCommentById,
+  updatePistolComment,
+} from "../../services/pistolCommentService";
 
-const GearCommentEditView = () => {
+const EditPistolCommentView = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [comment, setComment] = useState({
@@ -14,7 +14,7 @@ const GearCommentEditView = () => {
   });
   const [loading, setLoading] = useState(true);
   const getComment = async () => {
-    const res = await getGearCommentById(id);
+    const res = await getPistolCommentById(id);
     setComment(res.data);
     setLoading(false);
   };
@@ -28,11 +28,11 @@ const GearCommentEditView = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    await updateGearComment(id, comment);
+    await updatePistolComment(id, comment);
     setComment({
       text: "",
     });
-    navigate(`/item/${comment.productId._id}`);
+    navigate(`/pistol/${comment.productId._id}`);
   };
 
   useEffect(() => {
@@ -65,4 +65,4 @@ const GearCommentEditView = () => {
   );
 };
 
-export default GearCommentEditView;
+export default EditPistolCommentView;

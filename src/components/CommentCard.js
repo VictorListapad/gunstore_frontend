@@ -33,12 +33,35 @@ const CommentCard = ({ commentObj, handleDelete }) => {
             <button className="btn comment-delete-btn" onClick={handleDelete}>
               Delete
             </button>
-            <Link
-              className="btn comment-edit-btn"
-              to={`/editGearComment/${commentObj._id}`}
-            >
-              Edit
-            </Link>
+            {commentObj.productId.type === "gear" ? (
+              <Link
+                className="btn comment-edit-btn"
+                to={`/editGearComment/${commentObj._id}`}
+              >
+                Edit
+              </Link>
+            ) : commentObj.productId.type === "pistol" ? (
+              <Link
+                className="btn comment-edit-btn"
+                to={`/editPistolComment/${commentObj._id}`}
+              >
+                Edit
+              </Link>
+            ) : commentObj.productId.type === "ammunition" ? (
+              <Link
+                className="btn comment-edit-btn"
+                to={`/editAmmunitionComment/${commentObj._id}`}
+              >
+                Edit
+              </Link>
+            ) : (
+              <Link
+                className="btn comment-edit-btn"
+                to={`/editRifleComment/${commentObj._id}`}
+              >
+                Edit
+              </Link>
+            )}
           </div>
         ) : null}
       </div>
