@@ -2,17 +2,26 @@ import axios from "axios";
 import { toast } from "react-toastify";
 const apiUrl = process.env.REACT_APP_API_URL;
 
-export const getReviewsForGear = async (id) => {
-  const res = await axios.get(`${apiUrl}/gearReviews/item/${id}`);
-  return res;
+// GET ALL REVIEWS FOR A SPECIFIC AMMO
+export const getReviewsForAmmunition = async (id) => {
+  return await axios(`${apiUrl}/ammunitionReviews/ammo/${id}`);
 };
 
-export const createGearReview = async (review) => {
+// GET REVIEW BY ID
+export const getAmmoReviewById = async (id) => {
+  return await axios.get(`${apiUrl}/ammunitionReviews/ammunitionReview/${id}`);
+};
+
+// CREATE NEW AMMO REVIEW
+export const createAmmoReview = async (review) => {
   try {
     const { user } = JSON.parse(localStorage.getItem(`smokeandbarrels`));
     review.author = user._id;
-    review.date = new Date().toLocaleDateString();
-    const res = await axios.post(`${apiUrl}/gearReviews/gearReview`, review);
+    review.date = new Date().toLocaleDateString;
+    const res = await axios.post(
+      `${apiUrl}/ammunitionReviews/ammunitionReview`,
+      review
+    );
     toast.success(`Thank you for your feedback`, {
       theme: "dark",
     });
@@ -25,17 +34,13 @@ export const createGearReview = async (review) => {
   }
 };
 
-export const getGearReviewById = async (id) => {
-  const res = await axios.get(`${apiUrl}/gearReviews/gearReview/${id}`);
-  return res;
-};
-
-export const updateGearReview = async (review) => {
+// UPDATE REVIEW
+export const updateAmmoReview = async (review) => {
   const { user } = JSON.parse(localStorage.getItem(`smokeandbarrels`));
   if (user && user._id === review.author._id) {
     try {
       const res = await axios.put(
-        `${apiUrl}/gearReviews/gearReview/${review._id}`,
+        `${apiUrl}/ammunitionReviews/ammunitionReview/${review._id}`,
         review
       );
       toast.success(`Review Updated`, {
@@ -56,7 +61,7 @@ export const updateGearReview = async (review) => {
   }
 };
 
-export const deleteGearReview = async (review) => {
+export const deleteAmmoReview = async (review) => {
   const { user } = JSON.parse(localStorage.getItem(`smokeandbarrels`));
   if (
     user._id === review.author._id ||
@@ -65,7 +70,7 @@ export const deleteGearReview = async (review) => {
   ) {
     try {
       const res = await axios.delete(
-        `${apiUrl}/gearReviews/gearReview/${review._id}`
+        `${apiUrl}/ammunitionReviews/ammunitionReview/${review._id}`
       );
       toast.success(`Review Deleted`, {
         theme: "dark",
