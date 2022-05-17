@@ -3,9 +3,12 @@ import { ToastContainer } from "react-toastify";
 import AdminRoute from "./components/AdminRoute";
 import ModeratorRoute from "./components/ModeratorRoute";
 import { NavBar } from "./components/NavBar";
+import AddAmmunitionReviewView from "./views/Ammunition/AddAmmunitionReviewView";
 import AmmunitionDetailsView from "./views/Ammunition/AmmunitionDetailsView";
+import AmmunitionReviewsView from "./views/Ammunition/AmmunitionReviewsView";
 import AmmunitionView from "./views/Ammunition/AmmunitionView";
 import EditAmmunitionCommentView from "./views/Ammunition/EditAmmunitionCommentView";
+import EditAmmunitionReviewView from "./views/Ammunition/EditAmmunitionReviewView";
 import SignInView from "./views/Auth/SignInView";
 import SignUpView from "./views/Auth/SignUpView";
 import AddAmmunitionView from "./views/controls/AddAmmunitionView";
@@ -80,6 +83,18 @@ function App() {
         <Route
           path="/editAmmunitionComment/:id"
           element={<EditAmmunitionCommentView />}
+        />
+        <Route
+          path="/ammunitionReviews/:id"
+          element={<AmmunitionReviewsView />}
+        />
+        <Route
+          path="/writeAmmunitionReview/:id"
+          element={<AddAmmunitionReviewView />}
+        />
+        <Route
+          path="/editAmmunitionReview/:id"
+          element={<EditAmmunitionReviewView />}
         />
       </Routes>
     </BrowserRouter>

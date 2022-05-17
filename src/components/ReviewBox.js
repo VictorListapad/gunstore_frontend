@@ -31,13 +31,28 @@ const ReviewBox = ({ review, user, handleDelete }) => {
           </button>
         ) : null}
         {user && user._id === review.author._id ? (
-          <Link
-            to={`/editGearReview/${review._id}`}
-            className="btn edit-review-btn"
-          >
-            Edit
-          </Link>
-        ) : null}
+          review.type === "gear" ? (
+            <Link
+              to={`/editGearReview/${review._id}`}
+              className="btn edit-review-btn"
+            >
+              Edit
+            </Link>
+          ) : (
+            <Link
+              to={`/editAmmunitionReview/${review._id}`}
+              className="btn edit-review-btn"
+            >
+              Edit
+            </Link>
+          )
+        ) : // <Link
+        //   to={`/editGearReview/${review._id}`}
+        //   className="btn edit-review-btn"
+        // >
+        //   Edit
+        // </Link>
+        null}
       </div>
     </div>
   );

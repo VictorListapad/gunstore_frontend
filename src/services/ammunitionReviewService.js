@@ -17,7 +17,7 @@ export const createAmmoReview = async (review) => {
   try {
     const { user } = JSON.parse(localStorage.getItem(`smokeandbarrels`));
     review.author = user._id;
-    review.date = new Date().toLocaleDateString;
+    review.date = new Date().toLocaleDateString();
     const res = await axios.post(
       `${apiUrl}/ammunitionReviews/ammunitionReview`,
       review
