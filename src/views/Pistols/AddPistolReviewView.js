@@ -1,22 +1,16 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate, useParams } from "react-router";
-import {
-  getAmmoReviewById,
-  updateAmmoReview,
-} from "../../services/ammunitionReviewService";
-
-const EditAmmunitionReviewView = () => {
-  const navigate = useNavigate();
+import { createPistolReview } from "../../services/pistolReviewService";
+import "../../styles/AddReviewView.css";
+const AddPistolReviewView = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [review, setReview] = useState({
+    author: "",
     reviewText: "",
-    grade: "",
+    grade: 0,
+    productId: id,
   });
-
-  const getAmmoReview = async () => {
-    const res = await getAmmoReviewById(id);
-    setReview(res.data);
-  };
 
   const handleChange = (event) => {
     setReview({
@@ -27,18 +21,14 @@ const EditAmmunitionReviewView = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    await updateAmmoReview(review);
-    navigate(`/ammunitionReviews/${review.productId._id}`);
+    await createPistolReview(review);
+    navigate(`/pistolReviews/${id}`);
   };
 
-  useEffect(() => {
-    getAmmoReview();
-  }, []);
-
   return (
-    <div className="review-edit-container">
+    <div className="review-form-container">
       <form className="form-control add-review-form" onSubmit={handleSubmit}>
-        <h1>Edit Review</h1>
+        <h1>Review</h1>
         <label className="review-label" htmlFor="reviewText">
           Review
         </label>
@@ -50,6 +40,8 @@ const EditAmmunitionReviewView = () => {
           onChange={handleChange}
           value={review.reviewText}
           rows={8}
+          placeholder="please leave your feedback here"
+          required
         />
         <label className="review-label" htmlFor="grade">
           Score
@@ -61,6 +53,7 @@ const EditAmmunitionReviewView = () => {
           className="form-control"
           onChange={handleChange}
           value={review.grade}
+          required
         >
           <option value={0} disabled>
             Rate this product
@@ -79,4 +72,4 @@ const EditAmmunitionReviewView = () => {
   );
 };
 
-export default EditAmmunitionReviewView;
+export default AddPistolReviewView;

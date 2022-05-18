@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import {
-  getAmmoReviewById,
-  updateAmmoReview,
-} from "../../services/ammunitionReviewService";
+  getPistolReviewById,
+  updatePistolReview,
+} from "../../services/pistolReviewService";
 
-const EditAmmunitionReviewView = () => {
+const EditPistolReviewView = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const [review, setReview] = useState({
@@ -13,8 +13,8 @@ const EditAmmunitionReviewView = () => {
     grade: "",
   });
 
-  const getAmmoReview = async () => {
-    const res = await getAmmoReviewById(id);
+  const getPistolReview = async () => {
+    const res = await getPistolReviewById(id);
     setReview(res.data);
   };
 
@@ -27,12 +27,12 @@ const EditAmmunitionReviewView = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    await updateAmmoReview(review);
-    navigate(`/ammunitionReviews/${review.productId._id}`);
+    await updatePistolReview(review);
+    navigate(`/pistolReviews/${review.productId._id}`);
   };
 
   useEffect(() => {
-    getAmmoReview();
+    getPistolReview();
   }, []);
 
   return (
@@ -79,4 +79,4 @@ const EditAmmunitionReviewView = () => {
   );
 };
 
-export default EditAmmunitionReviewView;
+export default EditPistolReviewView;

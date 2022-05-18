@@ -29,8 +29,11 @@ import GearDetailsView from "./views/Gear/GearDetailsView";
 import GearReviewsView from "./views/Gear/GearReviewsView";
 import GearView from "./views/Gear/GearView";
 import HomeView from "./views/HomeView";
+import AddPistolReviewView from "./views/Pistols/AddPistolReviewView";
 import EditPistolCommentView from "./views/Pistols/EditPistolCommentView";
+import EditPistolReviewView from "./views/Pistols/EditPistolReviewView";
 import PistolDetailsView from "./views/Pistols/PistolDetailsView";
+import PistolReviewsView from "./views/Pistols/PistolReviewsView";
 import PistolView from "./views/Pistols/PistolsView";
 import EditRifleCommentView from "./views/Rifles/EditRifleCommentView";
 import RifleDetailsView from "./views/Rifles/RifleDetailsView";
@@ -95,6 +98,15 @@ function App() {
         <Route
           path="/editAmmunitionReview/:id"
           element={<EditAmmunitionReviewView />}
+        />
+        <Route path="/pistolReviews/:id" element={<PistolReviewsView />} />
+        <Route
+          path="/writePistolReview/:id"
+          element={<AddPistolReviewView />}
+        />
+        <Route
+          path="/editPistolReview/:id"
+          element={<EditPistolReviewView />}
         />
       </Routes>
     </BrowserRouter>
