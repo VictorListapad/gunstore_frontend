@@ -26,7 +26,6 @@ const PistolDetailsView = () => {
   const getPistol = async () => {
     const res = await getPistolById(id);
     setPistol(res.data);
-    // setLoading(false);
   };
 
   const getPistolComments = async () => {

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 import CommentCard from "../../components/CommentCard";
 import FirearmCarousel from "../../components/FirearmCarousel";
 import Preloader from "../../components/Preloader";
@@ -9,12 +10,14 @@ import {
   deleteRifleComment,
   getAllCommentsForRifle,
 } from "../../services/rifleCommentService";
+import { getReviewsForRifle } from "../../services/rifleReviewService";
 import { getRifleById } from "../../services/rifleService";
 import "../../styles/FirearmStyles/PistolDetailsView.css";
 
 const RifleDetailsView = () => {
   const [rifle, setRifle] = useState({});
   const { id } = useParams();
+  const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [rifleComments, setRifleComments] = useState([]);
   const [newComment, setNewComment] = useState({
@@ -31,6 +34,12 @@ const RifleDetailsView = () => {
     setRifleComments(res.data);
     setLoading(false);
   };
+
+  const getRifleReviews = async () => {
+    const res = await getReviewsForRifle(id);
+    setReviews(res.data);
+  };
+
   const handleChange = (event) => {
     setNewComment({
       ...newComment,
@@ -54,6 +63,7 @@ const RifleDetailsView = () => {
   useEffect(() => {
     getRifle();
     getRifleComments();
+    getRifleReviews();
     setNewComment({
       ...newComment,
       productId: id,
@@ -72,6 +82,25 @@ const RifleDetailsView = () => {
             </div>
             <div className="firearm-name">
               <h1 className="firearm-title">{rifle.model}</h1>
+              {!reviews.length ? (
+                <Link
+                  to={`/rifleReviews/${id}`}
+                  className="btn btn-primary go-to-reviews-btn"
+                >
+                  No Reviews Yet
+                </Link>
+              ) : (
+                <Link
+                  className="btn btn-primary go-to-reviews-btn"
+                  to={`/rifleReviews/${id}`}
+                >
+                  {(
+                    reviews.reduce((acc, cur) => acc + cur.grade, 0) /
+                    reviews.length
+                  ).toFixed(1)}
+                  {""}/ 5 - ( {reviews.length} Reviews )
+                </Link>
+              )}
               <div className="firearm-divider"></div>
               <p className="firearm-description">{rifle.shortDescription}</p>
             </div>

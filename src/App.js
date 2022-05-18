@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import AdminRoute from "./components/AdminRoute";
 import ModeratorRoute from "./components/ModeratorRoute";
+import UserRoute from "./components/UserRoute";
 import { NavBar } from "./components/NavBar";
 import AddAmmunitionReviewView from "./views/Ammunition/AddAmmunitionReviewView";
 import AmmunitionDetailsView from "./views/Ammunition/AmmunitionDetailsView";
@@ -35,8 +36,11 @@ import EditPistolReviewView from "./views/Pistols/EditPistolReviewView";
 import PistolDetailsView from "./views/Pistols/PistolDetailsView";
 import PistolReviewsView from "./views/Pistols/PistolReviewsView";
 import PistolView from "./views/Pistols/PistolsView";
+import AddRifleReviewView from "./views/Rifles/AddRifleReviewView";
 import EditRifleCommentView from "./views/Rifles/EditRifleCommentView";
+import EditRifleReviewView from "./views/Rifles/EditRifleReviewView";
 import RifleDetailsView from "./views/Rifles/RifleDetailsView";
+import RifleReviewsView from "./views/Rifles/RifleReviewsView";
 import RiflesView from "./views/Rifles/RiflesView";
 
 function App() {
@@ -65,49 +69,63 @@ function App() {
           <Route path="/editUsers" element={<EditUsersView />} />
           <Route path="/userEdit/:id" element={<UserUpdateView />} />
         </Route>
+        <Route element={<UserRoute />}>
+          <Route
+            path="/editGearComment/:id"
+            element={<GearCommentEditView />}
+          />
+          <Route
+            path="/editPistolComment/:id"
+            element={<EditPistolCommentView />}
+          />
+          <Route
+            path="/editRifleComment/:id"
+            element={<EditRifleCommentView />}
+          />
+          <Route
+            path="/editAmmunitionComment/:id"
+            element={<EditAmmunitionCommentView />}
+          />
+          <Route path="/writeGearReview/:id" element={<AddGearReviewView />} />
+          <Route path="/editGearReview/:id" element={<EditGearReviewView />} />
+          <Route
+            path="/writeAmmunitionReview/:id"
+            element={<AddAmmunitionReviewView />}
+          />
+          <Route
+            path="/editAmmunitionReview/:id"
+            element={<EditAmmunitionReviewView />}
+          />
+          <Route
+            path="/writePistolReview/:id"
+            element={<AddPistolReviewView />}
+          />
+          <Route
+            path="/editPistolReview/:id"
+            element={<EditPistolReviewView />}
+          />
+          <Route
+            path="/writeRifleReview/:id"
+            element={<AddRifleReviewView />}
+          />
+          <Route
+            path="/editRifleReview/:id"
+            element={<EditRifleReviewView />}
+          />
+        </Route>
         <Route path="/ammunition" element={<AmmunitionView />} />
         <Route path="/ammo/:id" element={<AmmunitionDetailsView />} />
         <Route path="/gear" element={<GearView />} />
         <Route path="/item/:id" element={<GearDetailsView />} />
         <Route path="/signIn" element={<SignInView />} />
         <Route path="/signUp" element={<SignUpView />} />
-        <Route path="/editGearComment/:id" element={<GearCommentEditView />} />
         <Route path="/gearItemReviews/:id" element={<GearReviewsView />} />
-        <Route path="/writeGearReview/:id" element={<AddGearReviewView />} />
-        <Route path="/editGearReview/:id" element={<EditGearReviewView />} />
-        <Route
-          path="/editPistolComment/:id"
-          element={<EditPistolCommentView />}
-        />
-        <Route
-          path="/editRifleComment/:id"
-          element={<EditRifleCommentView />}
-        />
-        <Route
-          path="/editAmmunitionComment/:id"
-          element={<EditAmmunitionCommentView />}
-        />
         <Route
           path="/ammunitionReviews/:id"
           element={<AmmunitionReviewsView />}
         />
-        <Route
-          path="/writeAmmunitionReview/:id"
-          element={<AddAmmunitionReviewView />}
-        />
-        <Route
-          path="/editAmmunitionReview/:id"
-          element={<EditAmmunitionReviewView />}
-        />
         <Route path="/pistolReviews/:id" element={<PistolReviewsView />} />
-        <Route
-          path="/writePistolReview/:id"
-          element={<AddPistolReviewView />}
-        />
-        <Route
-          path="/editPistolReview/:id"
-          element={<EditPistolReviewView />}
-        />
+        <Route path="/rifleReviews/:id" element={<RifleReviewsView />} />
       </Routes>
     </BrowserRouter>
   );
